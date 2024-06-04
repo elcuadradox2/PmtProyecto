@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+.container {
+  width: 40vw;
+  margin: 3em auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 100px; /* Cambiado a 100px para hacer las imágenes más grandes */
+  grid-auto-flow: column;
+  grid-gap: 5px; 
+}
+
+/* Ajustamos el tamaño de las filas de la cuadrícula para que las imágenes se apilen verticalmente */
+.container img {
+  width: 100%;
+  height: auto;
+  grid-row: span 1; /* Cada imagen ocupa una fila en la cuadrícula */
+}
+
+a {
+  display: block;
+  text-align: center;
+  padding: 1em;
+  background-color: #000200;
+  border: 1px solid #fafafa;
+  text-decoration: none;
+  color: #ffffff;
+  margin: 1em auto;
+  width: 50%;
+}
