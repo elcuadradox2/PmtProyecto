@@ -237,6 +237,12 @@ if($position=='admin') {
                         <p>Listado Boletas Peritaje Vehicular Transportes</p>
                     </a>
                 </li>
+                <li>
+                    <a href="vistavehicular.php">
+                        <i class="pe-7s-note2"></i>
+                        <p>Listado Boletas Peritaje Vehicular</p>
+                    </a>
+                </li>
 				<li>
                     <a href="add-user.php">
                         <i class="pe-7s-user"></i>

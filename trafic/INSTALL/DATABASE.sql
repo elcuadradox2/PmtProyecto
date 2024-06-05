@@ -314,3 +314,17 @@ CREATE TABLE fotos_peritaje_transportes (
   placas_peritajes VARCHAR(255) NOT NULL,
   fecha_hora_transportes DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE peritaje_vehicular (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha_hora DATETIME NOT NULL,
+    placa_peritaje_vehicular VARCHAR(255) NOT NULL,
+    nombre_agente VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE fotos_peritaje (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  foto varchar(255) NOT NULL,
+  placas_vehiculos VARCHAR(255) NOT NULL,
+  fecha_hora_vehicular DATETIME NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
