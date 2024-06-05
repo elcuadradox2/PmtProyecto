@@ -36,13 +36,13 @@ function myFunction() {
 </script>
                                 <table class="table table-hover table-striped" id="myTable">
                                     <thead>
-                                        <th>ID</th>
+                                      <th>ID</th>
                                     	<th>Fecha y Hora</th>
                                     	<th>Licencias</th>
                                     	<th>Tarjetas Circulacion</th>
                                     	<th>Observacion</th>
                                       <th>Nombre Agente</th>
-										<th>Fotos</th>
+										                  <th>Fotos</th>
                                     </thead>
                                     <tbody>
 									<?php 
@@ -51,36 +51,27 @@ function myFunction() {
 	for($i=0; $row = $result->fetch(); $i++){
 ?>
                                         <tr>
-										<td><?php echo $row['id']; ?></td>
-                    <td><?php echo $row['fecha_hora']; ?></td>
-                                        	<td><?php echo $row['licencias']; ?></td>
-                                        	<td><?php echo $row['tarjetas_circulacion']; ?></td>
-											<td><?php echo $row['observaciones']; ?></td>
-                      <td><?php echo $row['nombre_chapa_agente']; ?></td>
-											<td> <a href="listadocolisiones.php?idFoto=<?php echo $row['id']; ?>">Ver Fotos</a></td>
-                      <td><a href="delete-offence.php?id=<?php echo $row['id']; ?>" title="Click para eliminar la boleta colisiones"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
+										                    <td><?php echo $row['id']; ?></td>
+                                        <td><?php echo $row['fecha_hora']; ?></td>
+                                        <td><?php echo $row['licencias']; ?></td>
+                                        <td><?php echo $row['tarjetas_circulacion']; ?></td>
+											                  <td><?php echo $row['observaciones']; ?></td>
+                                        <td><?php echo $row['nombre_chapa_agente']; ?></td>
+											                  <td> <a href="listadocolisiones.php?idFoto=<?php echo $row['id']; ?>">Ver Fotos</a></td>
+                                        <td><a href="deletecolisiones.php?id=<?php echo $row['id']; ?>" title="Click para eliminar la boleta colisiones"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
                                         </tr>
 	<?php } ?>
-                                    </tbody>
-                                </table>
-
-								
-    </div>
-  </div>
-  
-								
+                                            </tbody>
+                                          </table>						
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-		   
-
-
-</body>
+                          </div>
+                        </body>
 <?php include "footer.php"; ?>
 
 

@@ -18,8 +18,8 @@
                             <br>
                             <textarea name="tarjetas_circulacion" id="tarjetas_circulacion" class="form-control" cols="30" rows="5"></textarea>
                             <br>
-                            <label for="fotos_cars">Ingrese Fotos Colisiones</label>
-                            <input type="file" name="fotos_cars[]" multiple accept="image/*"  class="form-control" required>
+                            <label for="fotos_colisiones">Ingrese Fotos Colisiones</label>
+                            <input type="file" name="fotos_colisiones[]" multiple accept="image/*"  class="form-control" required>
                             <label for="observaciones">Observaciones</label>
                             <br>
                             <textarea name="observaciones" id="observaciones"  class="form-control" cols="30" rows="5"></textarea>

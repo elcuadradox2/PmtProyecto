@@ -171,10 +171,11 @@ CREATE TABLE colisiones (
     nombre_chapa_agente varchar(255) NOT NULL
 );
 
-CREATE TABLE fotos_cars (
-  id int(11) NOT NULL,
+CREATE TABLE fotos_colisiones (
+  id INT AUTO_INCREMENT PRIMARY KEY,
   foto varchar(255) NOT NULL,
-  licencias_colisiones varchar(255) NOT NULL
+  licencias_colisiones varchar(255) NOT NULL,
+  fecha_colisiones DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
@@ -193,7 +194,8 @@ CREATE TABLE consignaciones (
 CREATE TABLE fotos_consignaciones (
   id INT AUTO_INCREMENT PRIMARY KEY,
   foto varchar(255) NOT NULL,
-  ubicacion_consignacion varchar(255) NOT NULL
+  ubicacion_consignaciones varchar(255) NOT NULL,
+  fecha_consignacion DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE remociones (

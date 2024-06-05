@@ -18,7 +18,8 @@
 
     $sqlQuery = "SELECT  c.*, f.* FROM consignaciones AS c
             INNER JOIN fotos_consignaciones AS f
-            ON c.ubicacion_consignacion = f.ubicacion_consignacion
+            ON c.ubicacion_consignacion = f.ubicacion_consignaciones
+            AND c.fecha_hora = f.fecha_consignacion
             AND c.id = {$idFoto}
             ORDER BY c.fecha_hora DESC";
     $resultadoSQL = mysqli_query($conn, $sqlQuery);
