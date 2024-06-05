@@ -328,3 +328,27 @@ CREATE TABLE fotos_peritaje (
   placas_vehiculos VARCHAR(255) NOT NULL,
   fecha_hora_vehicular DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE reporte_interno (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha_hora DATETIME NOT NULL,
+    nombre_agente VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE fotos_reporte (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  foto varchar(255) NOT NULL,
+  fecha_reporte DATETIME NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE servicios_sociales (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha_hora DATETIME NOT NULL,
+    nombre_agente VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE fotos_servicios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  foto varchar(255) NOT NULL,
+  fecha_servicios DATETIME NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

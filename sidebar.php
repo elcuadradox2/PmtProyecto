@@ -243,6 +243,18 @@ if($position=='admin') {
                         <p>Listado Boletas Peritaje Vehicular</p>
                     </a>
                 </li>
+                <li>
+                    <a href="vistareporteinterno.php">
+                        <i class="pe-7s-note2"></i>
+                        <p>Listado Boletas Reporte Interno</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="vistaserviciossociales.php">
+                        <i class="pe-7s-note2"></i>
+                        <p>Listado Boletas Servicios Sociales</p>
+                    </a>
+                </li>
 				<li>
                     <a href="add-user.php">
                         <i class="pe-7s-user"></i>

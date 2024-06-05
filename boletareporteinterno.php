@@ -5,7 +5,7 @@ $fecha_hora = $_POST['fecha_hora'];
 $nombre_agente = $_POST['nombre_agente'];
 
 //Verificando si existe el directorio
-$dirLocal = "files_reporteinterno";
+$dirLocal = "files_boletareporteinterno";
 if (!file_exists($dirLocal)) {
     mkdir($dirLocal, 0777, true);
 }
