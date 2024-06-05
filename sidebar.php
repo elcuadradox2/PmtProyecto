@@ -100,24 +100,6 @@ if($position=='admin') {
                     </a>
                 </li>
                 <li>
-                    <a href="consignaciones.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Consignaciones</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="remociones.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Remociones</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="notificaciones.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Notificaciones</p>
-                    </a>
-                </li>
-                <li>
                     <a href="agresiones.php">
                         <i class="pe-7s-look"></i>
                         <p>Agresiones</p>
@@ -142,6 +124,12 @@ if($position=='admin') {
                     </a>
                 </li>
                 <li>
+                    <a href="consignaciones.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Consignaciones</p>
+                    </a>
+                </li>
+                <li>
                     <a href="colisiones.php">
                         <i class="pe-7s-look"></i>
                         <p>Colisiones</p>
@@ -151,6 +139,12 @@ if($position=='admin') {
                     <a href="entrevista.php">
                         <i class="pe-7s-look"></i>
                         <p>Entrevista</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="notificaciones.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Notificaciones</p>
                     </a>
                 </li>
                 <li>
@@ -166,6 +160,12 @@ if($position=='admin') {
                     </a>
                 </li>
                 <li>
+                    <a href="remociones.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Remociones</p>
+                    </a>
+                </li>
+                <li>
                     <a href="reporteinterno.php">
                         <i class="pe-7s-look"></i>
                         <p>Reporte Interno</p>
@@ -175,30 +175,6 @@ if($position=='admin') {
                     <a href="serviciossociales.php">
                         <i class="pe-7s-look"></i>
                         <p>Servicios Sociales</p>
-                    </a>
-                </li>
-               <li>
-                    <a href="vistaconsignaciones.php">
-                        <i class="pe-7s-note2"></i>
-                        <p>Listado Boletas Consignaciones</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="vistacolisiones.php">
-                        <i class="pe-7s-note2"></i>
-                        <p>Listado Boletas Colisiones</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="vistaremociones.php">
-                        <i class="pe-7s-note2"></i>
-                        <p>Listado Boletas Remociones</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="vistanotificaciones.php">
-                        <i class="pe-7s-note2"></i>
-                        <p>Listado Boletas Notificaciones</p>
                     </a>
                 </li>
                 <li>
@@ -225,10 +201,28 @@ if($position=='admin') {
                         <p>Listado Boletas Bitacora Operativos</p>
                     </a>
                 </li>
+               <li>
+                    <a href="vistaconsignaciones.php">
+                        <i class="pe-7s-note2"></i>
+                        <p>Listado Boletas Consignaciones</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="vistacolisiones.php">
+                        <i class="pe-7s-note2"></i>
+                        <p>Listado Boletas Colisiones</p>
+                    </a>
+                </li>
                 <li>
                     <a href="vistaentrevista.php">
                         <i class="pe-7s-note2"></i>
                         <p>Listado Boletas Entrevista</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="vistanotificaciones.php">
+                        <i class="pe-7s-note2"></i>
+                        <p>Listado Boletas Notificaciones</p>
                     </a>
                 </li>
                 <li>
@@ -241,6 +235,12 @@ if($position=='admin') {
                     <a href="vistavehicular.php">
                         <i class="pe-7s-note2"></i>
                         <p>Listado Boletas Peritaje Vehicular</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="vistaremociones.php">
+                        <i class="pe-7s-note2"></i>
+                        <p>Listado Boletas Remociones</p>
                     </a>
                 </li>
                 <li>
