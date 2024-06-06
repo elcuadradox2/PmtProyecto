@@ -211,7 +211,8 @@ CREATE TABLE remociones (
 CREATE TABLE fotos_remociones (
   id INT AUTO_INCREMENT PRIMARY KEY,
   foto varchar(255) NOT NULL,
-  ubicaciones_remociones varchar(255) NOT NULL
+  ubicaciones_remociones varchar(255) NOT NULL,
+  fecha_remocion DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE notificaciones (

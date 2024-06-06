@@ -6,9 +6,9 @@ if(!isset($_SESSION['SESS_FIRST_NAME'])){
     header("location: login.php");
 }
 ?>
-<!doctype html>
-<html lang="en">
-<head>
+    <!doctype html>
+    <html lang="en">
+    <head>
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -33,17 +33,6 @@ if(!isset($_SESSION['SESS_FIRST_NAME'])){
 
     <!--  Light Bootstrap Table core CSS    -->
     <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
-
-
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="assets/css/demo.css" rel="stylesheet" />
-	
-    <script src="assets/js/jeffartagame.js" type="text/javascript" charset="utf-8"></script>
-    <script src="assets/js/lib/jquery.js" type="text/javascript"></script>
-<script src="assets/js/facebox.js" type="text/javascript"></script>
-
-
-<script src="js/application.js" type="text/javascript" charset="utf-8"></script>
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -296,24 +285,7 @@ if($position=='digitalizador') {
 	 <div class="main-panel">
 		<nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                  </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>
-                            <a href="index.php" class="dropdown-toggle" data-toggle="dropdown">
-								<p class="hidden-lg hidden-md">Menu</p>
-                            </a>
-                        </li>
-                        
-                    </ul>
-
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="logout.php">
