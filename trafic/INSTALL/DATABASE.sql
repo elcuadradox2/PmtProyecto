@@ -228,7 +228,8 @@ CREATE TABLE notificaciones (
 CREATE TABLE fotos_notificaciones (
   id INT AUTO_INCREMENT PRIMARY KEY,
   foto varchar(255) NOT NULL,
-  ubicaciones_notificaciones varchar(255) NOT NULL
+  ubicaciones_notificaciones varchar(255) NOT NULL,
+  fecha_notificacion DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE agresiones (

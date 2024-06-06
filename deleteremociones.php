@@ -27,7 +27,7 @@ while($row = $result->fetch(PDO::FETCH_ASSOC)){
 }
 
 // Luego, elimina las fotos de la base de datos que corresponden al mismo id y placa_peritaje_transportes
-$result = $db->prepare("DELETE FROM fotos_consignaciones WHERE ubicaciones_remociones= :ubicacion_remocion AND fecha_remocion= :fecha_hora_remocion");
+$result = $db->prepare("DELETE FROM fotos_remociones WHERE ubicaciones_remociones= :ubicacion_remocion AND fecha_remocion= :fecha_hora_remocion");
 $result->bindParam(':ubicacion_remocion', $ubicacion_remocion);
 $result->bindParam(':fecha_hora_remocion', $fecha_hora_remocion);
 if(!$result->execute()){    
