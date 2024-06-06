@@ -5,8 +5,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Listado Boleta Consignaciones</h4>
-                                <p class="category">Aqui esta el listado de todas las boletas consignaciones</p>
+                                <h4 class="title">Listado Boleta Remociones</h4>
+                                <p class="category">Aqui esta el listado de todas las boletas remociones</p>
                              </div>
                              <div class="content table-responsive table-full-width">	
 							 <label for="filter">Busqueda</label> <input type="text" name="filter" value="" id="myInput" placeholder="Busqueda por Ubicacion" onkeyup="myFunction()"/>
