@@ -46,7 +46,7 @@ foreach ($_FILES['fotos_agresiones']['name'] as $i => $name) {
     move_uploaded_file($sourceFoto, $resultadoFotos);
   
     // Insertar información del archivo en la base de datos
-    $sql = "INSERT INTO fotos_agresiones (foto, licencia_agresiones) VALUES ('{$nombreFoto}', '{$no_licencia}')";
+    $sql = "INSERT INTO fotos_agresiones (foto, licencia_agresiones, fecha_agresion) VALUES ('{$nombreFoto}', '{$no_licencia}', '{$fecha_hora}')";
 mysqli_query($conn, $sql);
 
     

@@ -19,6 +19,7 @@
     $sqlQuery = "SELECT  c.*, f.* FROM agresiones AS c
             INNER JOIN fotos_agresiones AS f
             ON c.no_licencia = f.licencia_agresiones
+            AND c.fecha_hora_notificacion = f.fecha_notificacion
             AND c.id = {$idFoto}
             ORDER BY c.fecha_hora DESC";
     $resultadoSQL = mysqli_query($conn, $sqlQuery);
