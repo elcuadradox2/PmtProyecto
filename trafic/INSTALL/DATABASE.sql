@@ -247,7 +247,8 @@ CREATE TABLE agresiones (
 CREATE TABLE fotos_agresiones (
   id INT AUTO_INCREMENT PRIMARY KEY,
   foto varchar(255) NOT NULL,
-  licencia_agresiones varchar(255) NOT NULL
+  licencia_agresiones varchar(255) NOT NULL,
+  fecha_agresion DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE alcoholemia (
