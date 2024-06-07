@@ -52,7 +52,7 @@
 	for($i=0; $row = $result->fetch(); $i++){
 ?>                                           
 										    <tr>
-                                            <td><?php echo $row['no_licencias']; ?></td>
+                                            <td><?php echo $row['no_licencia']; ?></td>
                                             <td class="td-actions text-right">
                                             <span style="padding:2px; background-color:#1DC7EA; color:#FFF;">  <?php echo $row['fecha_hora']; ?> </span>
                                             </td>

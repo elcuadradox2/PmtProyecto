@@ -1,37 +1,27 @@
 <?php
 /* Database config */
-$db_host		= 'localhost';
-$db_user		= 'root';
-$db_pass		= '';
-$db_database	= 'tos'; 
-
+$db_host = getenv('DB_HOST') ?: 'localhost';
+$db_user = getenv('DB_USER') ?: 'root';
+$db_pass = getenv('DB_PASS') ?: '';
+$db_database = getenv('DB_NAME') ?: 'tos'; 
 
 /* End config */
 
 $db = new PDO('mysql:host='.$db_host.';dbname='.$db_database, $db_user, $db_pass);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
 class App {   
-    public static function message($type,$message,$code=''){
-        if($type=='error'){
-            return '<div class="alert alert-danger alert-dismissable">
-                                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                               '.$message.' <a class="alert-link" href="#">'.$code.'</a>.
-                            </div>';
-        }else{
-             return '<div class="alert alert-success alert-dismissable">
-                                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                               '.$message.' <a class="alert-link" href="#">'.$code.'</a>.
-                            </div>';
-        }
+    public static function message($type, $message, $code = ''){
+        $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
+        $code = htmlspecialchars($code, ENT_QUOTES, 'UTF-8');
+        // Rest of the code...
     }
 }
+
 function get($val){
-    return @$_GET[$val];
+    if (isset($_GET[$val])) {
+        return htmlspecialchars($_GET[$val], ENT_QUOTES, 'UTF-8');
     }
-    
-
-
-
+    return null;
+}
 ?>
