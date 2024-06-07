@@ -47,7 +47,7 @@ foreach ($_FILES['fotos_alcoholemia']['name'] as $i => $name) {
     move_uploaded_file($sourceFoto, $resultadoFotos);
   
     // Insertar información del archivo en la base de datos
-    $sql = "INSERT INTO fotos_alcoholemia (foto, licencias_alcoholemia) VALUES ('{$nombreFoto}', '{$no_licencia}')";
+    $sql = "INSERT INTO fotos_alcoholemia (foto, licencias_alcoholemia, fecha_alcoholemia) VALUES ('{$nombreFoto}', '{$no_licencia}', '{$fecha_hora}')";
 mysqli_query($conn, $sql);
 
     

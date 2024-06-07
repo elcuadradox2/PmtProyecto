@@ -19,6 +19,7 @@
     $sqlQuery = "SELECT  c.*, f.* FROM alcoholemia AS c
             INNER JOIN fotos_alcoholemia AS f
             ON c.no_licencia = f.licencias_alcoholemia
+            AND c.fecha_hora = f.fecha_alcoholemia
             AND c.id = {$idFoto}
             ORDER BY c.fecha_hora DESC";
     $resultadoSQL = mysqli_query($conn, $sqlQuery);

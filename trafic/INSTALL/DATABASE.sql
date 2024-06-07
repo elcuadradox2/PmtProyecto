@@ -267,7 +267,8 @@ CREATE TABLE alcoholemia (
 CREATE TABLE fotos_alcoholemia (
   id INT AUTO_INCREMENT PRIMARY KEY,
   foto varchar(255) NOT NULL,
-  licencias_alcoholemia varchar(255) NOT NULL
+  licencias_alcoholemia varchar(255) NOT NULL,
+  fecha_alcoholemia DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE bitacora_actividades (

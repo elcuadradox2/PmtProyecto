@@ -58,7 +58,7 @@
 	for($i=0; $row = $result->fetch(); $i++){
 ?>
 
-<label for="nombre_chapa_agente">Nombre y Chapa del agente:</label> 
+<label for="nombre_chapa_agente">Nombre del agente:</label> 
 <input type="text" id="nombre_chapa_agente" name="nombre_chapa_agente" class="form-control" value="<?php echo $row['username']; ?>" readonly>
 <br>
 
