@@ -42,7 +42,7 @@ function myFunction() {
                                     	<th>No. Licencia</th>
                                         <th>No. Placa</th>
                                         <th>Tipo de boleta</th>
-                                        <th>Nombre de quien la impuso</th>
+                                        <th>Nombre quien ingreso al sistema</th>
 										<th>Fotos</th>
                                     </thead>
                                     <tbody>

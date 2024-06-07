@@ -42,7 +42,7 @@ function myFunction() {
                                     	<th>Tarjeta Circulacion</th>
                                         <th>No Peritaje</th>
                                         <th>Observaciones</th>
-                                        <th>Nombre Agente</th>
+                                        <th>Nombre quien ingreso al sistema</th>
 										<th>Fotos</th>
                                     </thead>
                                     <tbody>

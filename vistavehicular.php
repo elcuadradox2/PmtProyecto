@@ -38,7 +38,7 @@ function myFunction() {
                                         <th>ID</th>
                                     	<th>Fecha Y Hora</th>
                                         <th>Placa del vehiculo peritado</th>
-                                        <th>Nombre quien la ingreso al sistema</th>
+                                        <th>Nombre quien ingreso al sistema</th>
 										<th>Fotos</th>
                                     </thead>
                                     <tbody>

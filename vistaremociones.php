@@ -41,7 +41,7 @@ function myFunction() {
                                     	<th>Nombre o Comercio</th>
                                     	<th>Descripcion Consignacion</th>
                                         <th>Tipo de boleta</th>
-                                        <th>Nombre Agente</th>
+                                        <th>Nombre quien ingreso al sistema</th>
 										<th>Fotos</th>
                                     </thead>
                                     <tbody>

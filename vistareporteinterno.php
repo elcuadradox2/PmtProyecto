@@ -37,7 +37,7 @@ function myFunction() {
                                     <thead>
                                         <th>ID</th>
                                     	<th>Fecha Y Hora</th>
-                                        <th>Nombre quien la ingreso al sistema</th>
+                                        <th>Nombre quien ingreso al sistema</th>
 										<th>Fotos</th>
                                     </thead>
                                     <tbody>
