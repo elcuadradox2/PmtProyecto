@@ -1,18 +1,15 @@
-<?php include"sidebar.php"?>
+<?php include "sidebar.php"; ?>
         <div class="content">
             <div class="container-fluid">
-			
-							
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Listado Usuarios</h4>
-                                <p class="category">Aqui esta listado todos los usuarios</p>
-                            </div>
-							<div class="content table-responsive table-full-width">
-							<table class="table table-hover table-striped" id="myTable">
-							 <label for="filter">Busqueda</label> <input type="text" name="filter" value="" id="myInput" placeholder="Busqueda Usuario" onkeyup="myFunction()"/>
+                                <h4 class="title">Listado de usuarios</h4>
+                                <p class="category">Aqui esta el listado de usuarios</p>
+                             </div>
+                             <div class="content table-responsive table-full-width">	
+							 <label for="filter">Busqueda</label> <input type="text" name="filter" value="" id="myInput" placeholder="Busqueda por usuario" onkeyup="myFunction()"/>
    
    <script>
 function myFunction() {
@@ -36,38 +33,41 @@ function myFunction() {
   }
 }
 </script>
-   
+                                    <table class="table table-hover table-striped" id="myTable">
                                     <thead>
-                                        <th>Usuario ID</th>
-                                    	<th>Nombre</th>
-                                    	<th>Usuario</th>
-                                      <th>Chapa Agente</th>
-                                    	<th>Tipo Usuario</th>
-										<th>Eliminar</th>
+                                    	  <th>User ID</th>
+                                        <th>Nombre</th>
+                                        <th>Usuario</th>
+										                    <th>Chapa Agente</th>
+                                        <th>Puesto</th>
+                                        <th>Eliminar</th>
                                     </thead>
-                                   <tbody>
-								   <?php 
-	$result = $db->prepare("SELECT * FROM user ORDER BY id DESC");
-	$result->execute();
-	for($i=0; $row = $result->fetch(); $i++){
-
-                                       echo' <tr>';
-                                        	echo'<td>'.$row['user_id'].'</td>'; 
-                                        	echo'<td>'.$row['name'].'</td>';
-                                        	echo'<td>'.$row['username'].'</td>';
-                                          echo'<td>'.$row['chapa_agente'].'</td>';
-                                        	echo'<td>'.$row['position'].'</td>';
-											echo'<td><a  href="#" id="'.$row['id'].'" class="delbutton" title="Click para eliminar"><i class="fa fa-trash fa-lg text-danger"></i></a></td>';
-                                        	echo'</tr>';
-	}?>
-                                     </tbody>
-                                </table>
-
+                                    <tbody>
+                                <?php 
+                                    $stmt = $db->prepare("SELECT * FROM user ORDER BY id DESC");
+                                    $stmt->execute();
+                                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($row['user_id']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['name']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['username']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['chapa_agente']); ?></td>    
+                                    <td><?php echo htmlspecialchars($row['position']); ?></td>
+                                    <td><a href="delete-user.php?id=<?php echo htmlspecialchars($row['id']); ?>" title="Click para eliminar el usuario"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                                    </table>						
+                                    </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-		
+        </body>
 <?php include "footer.php"; ?>
+
+

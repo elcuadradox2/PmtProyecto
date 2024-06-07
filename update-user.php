@@ -11,13 +11,13 @@ session_start();
 include('connect.php');
  $user=$_SESSION['SESS_MEMBER_ID'];
 
-$a = $_POST['email'];
-$b = $_POST['name'];
-$c = $_POST['address'];
+$a = $_POST['username'];
+$b = $_POST['chapa_agente'];
+$c = $_POST['pass'];
 // query
 
 $sql = "UPDATE user SET 
-        `email`=?,`name`=?,`address`=?
+        `username`=?,`chapa_agente`=?,`pass`=?
         WHERE id='$user'";
 
 

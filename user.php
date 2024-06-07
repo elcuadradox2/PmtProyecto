@@ -15,7 +15,7 @@
                             <div class="content">
 							<?php 
 							  $user=$_SESSION['SESS_MEMBER_ID'];
-	$result = $db->prepare("SELECT id,username,email,name,address FROM user WHERE id='$user'");
+	$result = $db->prepare("SELECT id,username,pass,chapa_agente FROM user WHERE id='$user'");
 	$result->execute();
 	for($i=0; $row = $result->fetch(); $i++){
 ?>
@@ -29,8 +29,8 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Email address</label>
-                                                <input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo $row['email']; ?>">
+                                                <label for="exampleInputEmail1">chapa agente'</label>
+                                                <input type="chapa_agente'" name="chapa_agente'" class="form-control" placeholder="chapa agente'" value="<?php echo $row['chapa_agente']; ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -38,18 +38,8 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Full Name</label>
-                                                <input type="text" name="name" class="form-control" placeholder="Company" value="<?php echo $row['name']; ?>">
-                                            </div>
-                                        </div>
-                                      
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Address</label>
-                                                <input type="text" name="address" class="form-control" placeholder="Home Address" value="<?php echo $row['address']; ?>">
+                                                <label>pass'</label>
+                                                <input type="text" name="pass'" class="form-control" placeholder="pass'" value="<?php echo $row['pass']; ?>">
                                             </div>
                                         </div>
                                     </div>

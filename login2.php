@@ -1,20 +1,20 @@
 <?php
-//Start session
+// Iniciar sesión
 session_start();
 
-//Array to store validation errors
+// Array para almacenar errores de validación
 $errmsg_arr = array();
 
-//Validation error flag
+// Bandera de error de validación
 $errflag = false;
 
-//Connect to mysql server
+// Conectar al servidor MySQL
 $link = mysqli_connect('localhost', 'root', '', 'tos');
 if (!$link) {
     die('Failed to connect to server: ' . mysqli_connect_error());
 }
 
-//Function to sanitize values received from the form. Prevents SQL injection
+// Función para limpiar y escapar las entradas para prevenir inyección SQL
 function clean($link, $str) {
     $str = trim($str);
     if (function_exists('mysqli_real_escape_string')) {
@@ -23,11 +23,11 @@ function clean($link, $str) {
     return $str;
 }
 
-//Sanitize the POST values
+// Sanitizar las entradas POST
 $login = clean($link, $_POST['username']);
 $password = clean($link, $_POST['pass']);
 
-//Input Validations
+// Validaciones de entrada
 if ($login == '') {
     $errmsg_arr[] = 'Username missing';
     $errflag = true;
@@ -37,7 +37,7 @@ if ($password == '') {
     $errflag = true;
 }
 
-//If there are input validations, redirect back to the login form
+// Si hay errores de validación, redirigir de nuevo al formulario de inicio de sesión
 if ($errflag) {
     $_SESSION['ERRMSG_ARR'] = $errmsg_arr;
     session_write_close();
@@ -45,31 +45,39 @@ if ($errflag) {
     exit();
 }
 
-//Create query (Using prepared statement to prevent SQL Injection)
-$qry = "SELECT id, name, position, username FROM user WHERE username=? AND pass=?";
+// Consulta para obtener la contraseña hasheada del usuario
+$qry = "SELECT id, name, position, username, pass FROM user WHERE username=?";
 $stmt = mysqli_prepare($link, $qry);
 if ($stmt) {
-    mysqli_stmt_bind_param($stmt, 'ss', $login, $password);
+    mysqli_stmt_bind_param($stmt, 's', $login);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_store_result($stmt);
 
-    //Check whether the query was successful or not
+    // Verificar si la consulta se ejecutó correctamente
     if (mysqli_stmt_num_rows($stmt) == 1) {
-        //Login Successful
-        mysqli_stmt_bind_result($stmt, $id, $name, $position, $username);
+        // Encontró el usuario, obtener los resultados
+        mysqli_stmt_bind_result($stmt, $id, $name, $position, $username, $hashed_password);
         mysqli_stmt_fetch($stmt);
 
-        session_regenerate_id();
-        $_SESSION['SESS_MEMBER_ID'] = $id;
-        $_SESSION['SESS_FIRST_NAME'] = $name;
-        $_SESSION['SESS_LAST_NAME'] = $position;
-        $_SESSION['SESS_PRO_PIC'] = $username;
-        mysqli_stmt_close($stmt);
-        session_write_close();
-        header("location: index.php");
-        exit();
+        // Verificar si la contraseña coincide
+        if (password_verify($password, $hashed_password)) {
+            // Contraseña correcta, iniciar sesión
+            session_regenerate_id();
+            $_SESSION['SESS_MEMBER_ID'] = $id;
+            $_SESSION['SESS_FIRST_NAME'] = $name;
+            $_SESSION['SESS_LAST_NAME'] = $position;
+            $_SESSION['SESS_PRO_PIC'] = $username;
+            mysqli_stmt_close($stmt);
+            session_write_close();
+            header("location: index.php");
+            exit();
+        } else {
+            // Contraseña incorrecta
+            header("location: login.php");
+            exit();
+        }
     } else {
-        //Login failed
+        // Usuario no encontrado
         header("location: login.php");
         exit();
     }
