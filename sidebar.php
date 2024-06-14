@@ -61,7 +61,7 @@ if(!isset($_SESSION['SESS_FIRST_NAME'])){
 <?php }?>
 <?php
 $position=$_SESSION['SESS_LAST_NAME'];
-if($position=='officer') {
+if($position=='agente') {
 ?>
  <ul class="nav">
                 <li class="">

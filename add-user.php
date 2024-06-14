@@ -61,7 +61,7 @@ $prefix= md5(time()*rand(1, 2)); echo strip_tags(substr($prefix ,0,10));?>" read
                                                 <label>Tipo De Usuario</label>
                                                  <select class="form-control" name="position" >
   <option value="admin">Administrador</option>
-  <option value="officer">Agente</option>
+  <option value="agente">Agente</option>
     <option value="digitalizador">Digitalizador</option>
 </select> 
                                             </div>
