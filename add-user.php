@@ -9,7 +9,7 @@
                             </div>
 							<?php if(get("success")):?>
                                             <div>
-                                               <?=App::message("success", "New User added Successfully!")?>
+                                               <?=App::message("exitoso", "Nuevo Usuario Creado!")?>
                                             </div>
                                             <?php endif;?>
                             <div class="content">
