@@ -1,36 +1,37 @@
-                       <?php
-                        /**................................................................
- * @package eblog v 1.0
- * @author Faith Awolu 
- * Hillsofts Technology Ltd.            
- * (hillsofts@gmail.com)
- * ................................................................
- */
-                        
+<?php
 session_start();
 include('connect.php');
- $user=$_SESSION['SESS_MEMBER_ID'];
 
-$a = $_POST['username'];
-$b = $_POST['chapa_agente'];
-$c = $_POST['pass'];
-// query
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['SESS_MEMBER_ID'])) {
+    header("location: login.php");
+    exit();
+}
 
-$sql = "UPDATE user SET 
-        `username`=?,`chapa_agente`=?,`pass`=?
-        WHERE id='$user'";
+// Obtener los datos del formulario
+$user_id = $_POST['user_id'] ?? null;
+$new_password = $_POST['new_password'] ?? null;
 
+// Validar los datos
+if (is_null($user_id) || is_null($new_password)) {
+    // Redirigir o mostrar mensaje de error
+    header("location:user.php?error=datos_invalidos");
+    exit();
+}
 
-//$sql = "INSERT INTO settings (site_name,site_title,email,site_keyword,street,city,country,phone,facebook,twitter,linkedin,status) VALUES (:a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l)";
+// Hash de la nueva contraseña
+$hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
 
-$q = $db->prepare($sql);
-$q->execute(array($a,$b,$c));{
-if($q){
-      header("location:user.php?success=true");
-        }else{
-            header("location:user.php?failed=true");
-        } 
-		}
+// Preparar la consulta para actualizar la contraseña
+$sql = "UPDATE user SET pass = ? WHERE id = ?";
+$stmt = $db->prepare($sql);
 
-
+// Ejecutar la consulta
+if ($stmt->execute([$hashed_password, $user_id])) {
+    // Redirigir o mostrar mensaje de éxito
+    header("location:user.php?success=true");
+} else {
+    // Redirigir o mostrar mensaje de error
+    header("location:user.php?error=actualizacion_fallida");
+}
 ?>

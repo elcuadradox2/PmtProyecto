@@ -251,6 +251,12 @@ if($position=='admin') {
                     </a>
                 </li>
                 <li>
+                    <a href="user.php">
+                        <i class="pe-7s-user"></i>
+                        <p>Cambiar Contraseña</p>
+                    </a>
+                </li>
+                <li>
                     <a href="view-users.php">
                         <i class="pe-7s-news-paper"></i>
                         <p>Listar Usuarios</p>
