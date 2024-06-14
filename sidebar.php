@@ -65,9 +65,9 @@ if($position=='agente') {
 ?>
  <ul class="nav">
                 <li class="">
-                    <a href="index.php">
+                    <a href="boletasdescarga.php">
                         <i class="pe-7s-graph"></i>
-                        <p>Menu</p>
+                        <p>Boletas</p>
                     </a>
                 </li>
 				 <li>
