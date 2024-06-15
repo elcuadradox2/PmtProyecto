@@ -21,8 +21,8 @@
     <input type="text" id="nombre_agente" name="nombre_agente"  class="form-control" >
 <br>
 
-<label for="pagado">Estado de Pago:</label>
-<input type="text" id="pagado" name="pagado" class="form-control" value="No Pagado" readonly>
+<label for="status">Estado de Pago:</label>
+<input type="text" id="status" name="status" class="form-control" value="No Pagado" readonly>
 <br>
 
 
