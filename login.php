@@ -77,8 +77,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	$result->execute();
 	for($i=0; $row = $result->fetch(); $i++){
 ?>
-									<p>&copy;2024 <?php echo $row['site_name']; ?> | Diseñado por 
-									<a href="" target="_blank">Jorge Lemus</a>
+									<p>&copy;2024 <?php echo $row['site_name']; ?> 
 									</p>
 <?php } ?>
 								</div>
