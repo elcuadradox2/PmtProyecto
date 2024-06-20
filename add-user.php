@@ -7,11 +7,6 @@
                             <div class="header">
                                 <h4 class="title">Agregar Usuario Nuevo</h4>
                             </div>
-							<?php if(get("success")):?>
-                                            <div>
-                                               <?=App::message("exitoso", "Nuevo Usuario Creado!")?>
-                                            </div>
-                                            <?php endif;?>
                             <div class="content">
                                 <form action="saveuser.php" method="post">
                                     <div class="row">
@@ -54,15 +49,13 @@ $prefix= md5(time()*rand(1, 2)); echo strip_tags(substr($prefix ,0,10));?>" read
                                     </div>
 
                                     <div class="row">
-                                    
-                                       
-										  <div class="col-md-12">
+										<div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Tipo De Usuario</label>
                                                  <select class="form-control" name="position" >
   <option value="admin">Administrador</option>
   <option value="agente">Agente</option>
-    <option value="digitalizador">Digitalizador</option>
+  <option value="digitalizador">Digitalizador</option>
 </select> 
                                             </div>
                                         </div>
@@ -79,6 +72,4 @@ $prefix= md5(time()*rand(1, 2)); echo strip_tags(substr($prefix ,0,10));?>" read
                 </div>
             </div>
         </div>
-
-
-        <?php include"footer.php"; ?>
+        <?php include "footer.php"; ?>

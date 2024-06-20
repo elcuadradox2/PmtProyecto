@@ -70,12 +70,6 @@ if($position=='agente') {
                         <p>Boletas</p>
                     </a>
                 </li>
-				 <li>
-                    <a href="report-offence.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Reportar Infraccion</p>
-                    </a>
-                </li>
 			 </ul>
 <?php
 }
@@ -277,11 +271,83 @@ if($position=='digitalizador') {
             </a>
         </li>
         <li>
-            <a href="view-offence.php">
-                <i class="pe-7s-note2"></i>
-                <p>Lista de Infraccion</p>
-            </a>
-        </li>
+                    <a href="agresiones.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Agresiones</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="alcoholemia.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Alcoholemia</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="bitacoraactividades.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Bitacora De Actividades</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="bitacoraoperativos.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Bitacora De Operativos</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="consignaciones.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Consignaciones</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="colisiones.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Colisiones</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="entrevista.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Entrevista</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="notificaciones.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Notificaciones</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="peritajevehiculartransportes.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Peritaje Vehicular Transportes</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="peritajevehicular.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Peritaje Vehicular</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="remociones.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Remociones</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="reporteinterno.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Reporte Interno</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="serviciossociales.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Servicios Sociales</p>
+                    </a>
+                </li>
     </ul>
 <?php
 }
