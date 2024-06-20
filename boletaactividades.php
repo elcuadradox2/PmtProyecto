@@ -49,7 +49,7 @@ mysqli_query($conn, $sql);
   }
 }
 }
-$sql = "INSERT INTO bitacora_actividades (fecha_hora, nombre_agente, 'status') VALUES ('{$fecha_hora}', '{$nombre_agente}', '{$status}')";
+$sql = "INSERT INTO bitacora_actividades (fecha_hora, nombre_agente, status) VALUES ('{$fecha_hora}', '{$nombre_agente}', '{$status}')";
     mysqli_query($conn, $sql);
 } 
 
