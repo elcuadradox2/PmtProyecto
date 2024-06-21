@@ -2,7 +2,7 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-18">
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Listado Boleta Agresiones</h4>
@@ -39,11 +39,14 @@ function myFunction() {
                                     	<th>Nombre O Chapa del agente</th>
                                     	<th>Lugar del hecho</th>
                                     	<th>Fecha y Hora</th>
+                                        <th>Nombre</th>
                                     	<th>No. Licencia</th>
                                         <th>No. Placa</th>
                                         <th>Tipo de boleta</th>
                                         <th>Nombre quien ingreso al sistema</th>
+                                        <th>Estado de Pago</th>
 										<th>Fotos</th>
+                                        <th>Acciones</th>
                                     </thead>
                                     <tbody>
 									<?php 
@@ -61,7 +64,13 @@ function myFunction() {
                                         <td><?php echo $row['no_placa']; ?></td>
                                         <td><?php echo $row['tipo_boleta']; ?></td>
                                         <td><?php echo $row['nombre_chapa_agente']; ?></td>
+                                        <td><?php echo $row['estado_pago']; ?></td>
 										<td> <a href="listadoagresiones.php?idFoto=<?php echo $row['id']; ?>">Ver Fotos</a></td>
+                                        <td>
+                                        <a href="cambiarestadoagresiones.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-success btn-sm" onclick="return confirm('¿Está seguro de que desea eliminar esta entrada?');">
+                                            <?php echo $row['estado_pago'] === 'No Pagado' ? 'Marcar como Pagado' : 'Marcar como No Pagado'; ?>
+                                        </a>
+                                    </td>
                                         <td><a href="deleteagresiones.php?id=<?php echo $row['id']; ?>" title="Click para eliminar la boleta agresiones"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
                                         </tr>
 	<?php } ?>

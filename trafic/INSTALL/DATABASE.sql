@@ -241,7 +241,8 @@ CREATE TABLE agresiones (
     no_licencia VARCHAR(255) NOT NULL,
     no_placa VARCHAR(255) NOT NULL,
     tipo_boleta VARCHAR(255) NOT NULL,
-    nombre_chapa_agente VARCHAR(255) NOT NULL
+    nombre_chapa_agente VARCHAR(255) NOT NULL,
+    estado_pago VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE fotos_agresiones (
@@ -274,7 +275,8 @@ CREATE TABLE fotos_alcoholemia (
 CREATE TABLE bitacora_actividades (
     id INT AUTO_INCREMENT PRIMARY KEY,
     fecha_hora DATETIME NOT NULL,
-    nombre_agente VARCHAR(255) NOT NULL
+    nombre_agente VARCHAR(255) NOT NULL,
+    status VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE fotos_actividades (

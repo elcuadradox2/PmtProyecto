@@ -9,6 +9,7 @@ $no_licencia = $_POST['no_licencia'];
 $no_placa = $_POST['no_placa'];
 $tipo_boleta = $_POST['tipo_boleta'];
 $nombre_chapa_agente = $_POST['nombre_chapa_agente'];
+$estado_pago = $_POST['estado_pago'];
 
 
 //Verificando si existe el directorio
@@ -55,7 +56,7 @@ mysqli_query($conn, $sql);
   }
 }
 }
-$sql = "INSERT INTO agresiones (nombre_chapa, lugar, fecha_hora, nombre, no_licencia, no_placa, tipo_boleta, nombre_chapa_agente) VALUES ('{$nombre_chapa}', '{$lugar}', '{$fecha_hora}', '{$nombre}', '{$no_licencia}', '{$no_placa}' , '{$tipo_boleta}' , '{$nombre_chapa_agente}')";
+$sql = "INSERT INTO agresiones (nombre_chapa, lugar, fecha_hora, nombre, no_licencia, no_placa, tipo_boleta, nombre_chapa_agente, estado_pago) VALUES ('{$nombre_chapa}', '{$lugar}', '{$fecha_hora}', '{$nombre}', '{$no_licencia}', '{$no_placa}' , '{$tipo_boleta}' , '{$nombre_chapa_agente}', '{$estado_pago}')";
 mysqli_query($conn, $sql);
 } 
 

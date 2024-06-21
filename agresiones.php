@@ -50,21 +50,13 @@
   </select>
 <br>
 
-  <?php 
-							  $user=$_SESSION['SESS_MEMBER_ID'];
-	$result = $db->prepare("SELECT id,username,name FROM user WHERE id='$user'");
-	$result->execute();
-	for($i=0; $row = $result->fetch(); $i++){
-?>
-
 <label for="nombre_chapa_agente">Nombre del agente:</label> 
-<input type="text" id="nombre_chapa_agente" name="nombre_chapa_agente" class="form-control" value="<?php echo $row['username']; ?>" readonly>
+<input type="text" id="nombre_chapa_agente" name="nombre_chapa_agente" class="form-control" required>
 <br>
 
-<?php }?>
-
-    <label>Descargar Boleta de Agresiones</label>
-<a href="boletas/agresiones.pdf" class="btn btn-primary" download>Descargar PDF</a>
+<label for="estado_pago">Estado de Pago:</label>
+<input type="text" id="estado_pago" name="estado_pago" class="form-control" value="No Pagado" readonly>
+<br>
 
 <button type="submit" name="submit" class="btn btn-info btn-fill pull-right">Subir Infraccion</button>
 <br>
