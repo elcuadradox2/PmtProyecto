@@ -30,24 +30,15 @@
     <input type="text" id="no_peritaje" name="no_peritaje" class="form-control" required>
 
     <label for="observaciones">Observaciones:</label>
-    <textarea id="observaciones" name="observaciones" class="form-control" required></textarea>
-
-    <?php 
-							  $user=$_SESSION['SESS_MEMBER_ID'];
-	$result = $db->prepare("SELECT id,username,name FROM user WHERE id='$user'");
-	$result->execute();
-	for($i=0; $row = $result->fetch(); $i++){
-?>
-    
+    <textarea id="observaciones" name="observaciones" class="form-control" required></textarea>    
 
     <label for="nombre_chapa_agente">Nombre del agente:</label>
-    <input type="text" id="nombre_chapa_agente" name="nombre_chapa_agente" class="form-control" value="<?php echo $row['username']; ?>"  readonly>
+    <input type="text" id="nombre_chapa_agente" name="nombre_chapa_agente" class="form-control" required>
 <br>
 
-<?php }?>
-
-<label>Descargar Boleta de Consignaciones</label>
-<a href="boletas/consignaciones.pdf" class="btn btn-primary" download>Descargar PDF</a>
+<label for="estado_pago">Estado de Pago:</label>
+<input type="text" id="estado_pago" name="estado_pago" class="form-control" value="No Pagado" readonly>
+<br>
 
     <button type="submit" name="submit" class="btn btn-info btn-fill pull-right">Subir Infraccion</button>
 

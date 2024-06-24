@@ -22,7 +22,7 @@ function myFunction() {
 
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[4];
+    td = tr[i].getElementsByTagName("td")[5];
     if (td) {
       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
@@ -43,7 +43,7 @@ function myFunction() {
                                         <th>No. Licencia</th>
                                         <th>No. Placa</th>
                                         <th>Tipo de boleta</th>
-                                        <th>Nombre quien ingreso al sistema</th>
+                                        <th>Nombre Autor Boleta</th>
                                         <th>Estado de Pago</th>
                                         <th>Fotos</th>
                                         <th>Acciones</th>
@@ -67,7 +67,7 @@ function myFunction() {
                                         <td><?php echo htmlspecialchars($row['estado_pago'], ENT_QUOTES, 'UTF-8'); ?></td>
                                         <td> <a href="listadoagresiones.php?idFoto=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>">Ver Fotos</a></td>
                                         <td>
-                                        <a href="cambiarestadoagresiones.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-success btn-sm" onclick="return confirm('¿Está seguro de que desea eliminar esta entrada?');">
+                                        <a href="cambiarestadoagresiones.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-success btn-sm" onclick="return confirm('¿Está seguro de que desea cambiar a pagado esta boleta?');">
                                             <?php echo htmlspecialchars($row['estado_pago'] === 'No Pagado' ? 'Marcar como Pagado' : 'Marcar como No Pagado', ENT_QUOTES, 'UTF-8'); ?>
                                         </a>
                                     </td>

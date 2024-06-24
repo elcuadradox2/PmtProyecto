@@ -49,19 +49,25 @@ function myFunction() {
 									<?php 
 	$result = $db->prepare("SELECT * FROM consignaciones ORDER BY id DESC");
 	$result->execute();
-	for($i=0; $row = $result->fetch(); $i++){
+	while($row = $result->fetch(PDO::FETCH_ASSOC)){
 ?>
-                                        <tr>
-										<td><?php echo $row['id']; ?></td>
-                                        <td><?php echo $row['fecha_hora']; ?></td>
-                                        <td><?php echo $row['ubicacion_consignacion']; ?></td>
-                                        <td><?php echo $row['no_licencia']; ?></td>
-										<td><?php echo $row['no_tarjeta_circulacion']; ?></td>
-                                        <td><?php echo $row['no_peritaje']; ?></td>
-                                        <td><?php echo $row['observaciones']; ?></td>
-                                        <td><?php echo $row['nombre_chapa_agente']; ?></td>
-										<td> <a href="listadoconsignaciones.php?idFoto=<?php echo $row['id']; ?>">Ver Fotos</a></td>
-                                        <td><a href="deleteconsignaciones.php?id=<?php echo $row['id']; ?>" title="Click para eliminar la boleta consignaciones"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
+                                       <tr>
+                                        <td><?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['fecha_hora'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['ubicacion_consignacion'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['no_licencia'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['no_tarjeta_circulacion'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['no_peritaje'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['observaciones'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['nombre_chapa_agente'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['estado_pago'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td> <a href="listadoconsignaciones.php?idFoto=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>">Ver Fotos</a></td>
+                                        <td>
+                                        <a href="cambiarestadoconsignaciones.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-success btn-sm" onclick="return confirm('¿Está seguro de que desea cambiar a pagado esta boleta?');">
+                                        <?php echo htmlspecialchars($row['estado_pago'] === 'No Pagado' ? 'Marcar como Pagado' : 'Marcar como No Pagado', ENT_QUOTES, 'UTF-8'); ?>
+                                        </a>
+                                        </td>
+                                        <td><a href="deleteconsignaciones.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" title="Click para eliminar la boleta consignaciones"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
                                         </tr>
 	<?php } ?>
                                     </tbody>

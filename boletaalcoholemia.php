@@ -10,6 +10,7 @@ $tarjeta_circulacion = $_POST['tarjeta_circulacion'];
 $no_placas = $_POST['no_placas'];
 $tipo_boleta = $_POST['tipo_boleta'];
 $nombre_chapa_agente = $_POST['nombre_chapa_agente'];
+$estado_pago = $_POST['estado_pago'];
 
 
 //Verificando si existe el directorio
@@ -56,7 +57,7 @@ mysqli_query($conn, $sql);
   }
 }
 }
-$sql = "INSERT INTO alcoholemia (fecha_hora, lugar_prueba, nombre_conductor, domicilio_conductor, no_licencia, tarjeta_circulacion, no_placas, tipo_boleta, nombre_chapa_agente) VALUES ('{$fecha_hora}', '{$lugar_prueba}', '{$nombre_conductor}', '{$domicilio_conductor}', '{$no_licencia}' , '{$tarjeta_circulacion}' , '{$no_placas}' , '{$tipo_boleta}' , '{$nombre_chapa_agente}')";
+$sql = "INSERT INTO alcoholemia (fecha_hora, lugar_prueba, nombre_conductor, domicilio_conductor, no_licencia, tarjeta_circulacion, no_placas, tipo_boleta, nombre_chapa_agente, estado_pago) VALUES ('{$fecha_hora}', '{$lugar_prueba}', '{$nombre_conductor}', '{$domicilio_conductor}', '{$no_licencia}' , '{$tarjeta_circulacion}' , '{$no_placas}' , '{$tipo_boleta}' , '{$nombre_chapa_agente}', '{$estado_pago}')";
 mysqli_query($conn, $sql);
 } 
 

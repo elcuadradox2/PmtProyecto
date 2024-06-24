@@ -7,6 +7,7 @@ $nombre_persona_comercio = $_POST['nombre_persona_comercio'];
 $descripcion_consignacion = $_POST['descripcion_consignacion'];
 $tipo_boleta = $_POST['tipo_boleta'];
 $nombre_chapa_agente = $_POST['nombre_chapa_agente'];
+$estado_pago = $_POST['estado_pago'];
 
 
 //Verificando si existe el directorio
@@ -53,7 +54,7 @@ mysqli_query($conn, $sql);
   }
 }
 }
-$sql = "INSERT INTO remociones (ubicacion_remocion, fecha_hora_remocion, nombre_persona_comercio, descripcion_consignacion, tipo_boleta, nombre_chapa_agente) VALUES ('{$ubicacion_remocion}', '{$fecha_hora_remocion}', '{$nombre_persona_comercio}', '{$descripcion_consignacion}', '{$tipo_boleta}' , '{$nombre_chapa_agente}')";
+$sql = "INSERT INTO remociones (ubicacion_remocion, fecha_hora_remocion, nombre_persona_comercio, descripcion_consignacion, tipo_boleta, nombre_chapa_agente, estado_pago) VALUES ('{$ubicacion_remocion}', '{$fecha_hora_remocion}', '{$nombre_persona_comercio}', '{$descripcion_consignacion}', '{$tipo_boleta}' , '{$nombre_chapa_agente}', '{$estado_pago}')";
 mysqli_query($conn, $sql);
 } 
 

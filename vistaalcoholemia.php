@@ -22,7 +22,7 @@ function myFunction() {
 
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[6];
+    td = tr[i].getElementsByTagName("td")[5];
     if (td) {
       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
@@ -44,29 +44,38 @@ function myFunction() {
                                         <th>Tarjeta Circulacion</th>
                                         <th>No. Placa</th>
                                         <th>Tipo de boleta</th>
-                                        <th>Nombre quien ingreso al sistema</th>
+                                        <th>Nombre Autor Boleta</th>
+                                        <th>Estado de Pago</th>
 										<th>Fotos</th>
+                                        <th>Acciones</th>
                                     </thead>
                                     <tbody>
 									<?php 
 	$result = $db->prepare("SELECT * FROM alcoholemia ORDER BY id DESC");
 	$result->execute();
-	for($i=0; $row = $result->fetch(); $i++){
+	while($row = $result->fetch(PDO::FETCH_ASSOC)){
 ?>
-                                        <tr>
-										<td><?php echo $row['id']; ?></td>
-                                        <td><?php echo $row['fecha_hora']; ?></td>
-                                        <td><?php echo $row['lugar_prueba']; ?></td>
-                                        <td><?php echo $row['nombre_conductor']; ?></td>
-										<td><?php echo $row['domicilio_conductor']; ?></td>
-                                        <td><?php echo $row['no_licencia']; ?></td>
-                                        <td><?php echo $row['tarjeta_circulacion']; ?></td>
-                                        <td><?php echo $row['no_placas']; ?></td>
-                                        <td><?php echo $row['tipo_boleta']; ?></td>
-                                        <td><?php echo $row['nombre_chapa_agente']; ?></td>
-										<td> <a href="listadoalcoholemia.php?idFoto=<?php echo $row['id']; ?>">Ver Fotos</a></td>
-                                        <td><a href="deletealcoholemia.php?id=<?php echo $row['id']; ?>" title="Click para eliminar la boleta alcoholemia"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
-                                        </tr>
+                                        
+<tr>
+    <td><?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['fecha_hora'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['lugar_prueba'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['nombre_conductor'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['domicilio_conductor'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['no_licencia'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['tarjeta_circulacion'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['no_placas'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['tipo_boleta'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['nombre_chapa_agente'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['estado_pago'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><a href="listadoalcoholemia.php?idFoto=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>">Ver Fotos</a></td>
+    <td>
+        <a href="cambiarestadoalcoholemia.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-success btn-sm" onclick="return confirm('¿Está seguro de que desea cambiar a pagado esta boleta?');">
+            <?php echo htmlspecialchars($row['estado_pago'] === 'No Pagado' ? 'Marcar como Pagado' : 'Marcar como No Pagado', ENT_QUOTES, 'UTF-8'); ?>
+        </a>
+    </td>
+    <td><a href="deletealcoholemia.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" title="Click para eliminar la boleta alcoholemia"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
+</tr>
 	<?php } ?>
                                     </tbody>
                                     </table>						

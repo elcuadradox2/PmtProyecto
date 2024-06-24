@@ -188,7 +188,8 @@ CREATE TABLE consignaciones (
     no_tarjeta_circulacion VARCHAR(255) NOT NULL,
     no_peritaje VARCHAR(255) NOT NULL,
     observaciones TEXT NOT NULL,
-    nombre_chapa_agente VARCHAR(255) NOT NULL
+    nombre_chapa_agente VARCHAR(255) NOT NULL,
+    estado_pago VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE fotos_consignaciones (
@@ -205,7 +206,8 @@ CREATE TABLE remociones (
     nombre_persona_comercio VARCHAR(255) NOT NULL,
     descripcion_consignacion VARCHAR(255) NOT NULL,
     tipo_boleta VARCHAR(255) NOT NULL,
-    nombre_chapa_agente VARCHAR(255) NOT NULL
+    nombre_chapa_agente VARCHAR(255) NOT NULL,
+    estado_pago VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE fotos_remociones (
@@ -222,7 +224,8 @@ CREATE TABLE notificaciones (
     nombre_persona_comercio VARCHAR(255) NOT NULL,
     descripcion_notificacion VARCHAR(255) NOT NULL,
     tipo_boleta VARCHAR(255) NOT NULL,
-    nombre_chapa_agente VARCHAR(255) NOT NULL
+    nombre_chapa_agente VARCHAR(255) NOT NULL,
+    estado_pago VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE fotos_notificaciones (
@@ -262,7 +265,8 @@ CREATE TABLE alcoholemia (
     tarjeta_circulacion VARCHAR(255) NOT NULL,
     no_placas VARCHAR(255) NOT NULL,
     tipo_boleta VARCHAR(255) NOT NULL,
-    nombre_chapa_agente VARCHAR(255) NOT NULL
+    nombre_chapa_agente VARCHAR(255) NOT NULL,
+    estado_pago VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE fotos_alcoholemia (

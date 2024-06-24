@@ -41,25 +41,33 @@ function myFunction() {
                                     	<th>Nombre o Comercio</th>
                                     	<th>Descripcion Consignacion</th>
                                         <th>Tipo de boleta</th>
-                                        <th>Nombre quien ingreso al sistema</th>
+                                        <th>Nombre Autor Boleta</th>
+                                        <th>Estado de Pago</th>
 										<th>Fotos</th>
+                                        <th>Acciones</th>
                                     </thead>
                                     <tbody>
 									<?php 
 	$result = $db->prepare("SELECT * FROM remociones ORDER BY id DESC");
 	$result->execute();
-	for($i=0; $row = $result->fetch(); $i++){
+	while($row = $result->fetch(PDO::FETCH_ASSOC)){
 ?>
                                         <tr>
-										<td><?php echo $row['id']; ?></td>
-                                        <td><?php echo $row['ubicacion_remocion']; ?></td>
-                                        <td><?php echo $row['fecha_hora_remocion']; ?></td>
-                                        <td><?php echo $row['nombre_persona_comercio']; ?></td>
-										<td><?php echo $row['descripcion_consignacion']; ?></td>
-                                        <td><?php echo $row['tipo_boleta']; ?></td>
-                                        <td><?php echo $row['nombre_chapa_agente']; ?></td>
-										<td> <a href="listadoremociones.php?idFoto=<?php echo $row['id']; ?>">Ver Fotos</a></td>
-                                        <td><a href="deleteremociones.php?id=<?php echo $row['id']; ?>" title="Click para eliminar la boleta remociones"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
+                                        <td><?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['ubicacion_remocion'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['fecha_hora_remocion'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['nombre_persona_comercio'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['descripcion_consignacion'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['tipo_boleta'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['nombre_chapa_agente'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['estado_pago'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td> <a href="listadoremociones.php?idFoto=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>">Ver Fotos</a></td>
+                                        <td>
+                                        <a href="cambiarestadoremociones.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-success btn-sm" onclick="return confirm('¿Está seguro de que desea cambiar a pagado esta boleta?');">
+                                        <?php echo htmlspecialchars($row['estado_pago'] === 'No Pagado' ? 'Marcar como Pagado' : 'Marcar como No Pagado', ENT_QUOTES, 'UTF-8'); ?>
+                                        </a>
+                                        </td>
+                                        <td><a href="deleteremociones.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" title="Click para eliminar la boleta remociones"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
                                         </tr>
 	<?php } ?>
                                     </tbody>

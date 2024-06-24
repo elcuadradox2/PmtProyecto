@@ -8,7 +8,7 @@ $no_tarjeta_circulacion = $_POST['no_tarjeta_circulacion'];
 $no_peritaje = $_POST['no_peritaje'];
 $observaciones = $_POST['observaciones'];
 $nombre_chapa_agente = $_POST['nombre_chapa_agente'];
-
+$estado_pago = $_POST['estado_pago'];
 
 //Verificando si existe el directorio
 $dirLocal = "files_boletaconsignaciones";
@@ -54,7 +54,7 @@ mysqli_query($conn, $sql);
   }
 }
 }
-$sql = "INSERT INTO consignaciones (fecha_hora, ubicacion_consignacion, no_licencia, no_tarjeta_circulacion, no_peritaje, observaciones, nombre_chapa_agente) VALUES ('{$fecha_hora}', '{$ubicacion_consignacion}', '{$no_licencia}', '{$no_tarjeta_circulacion}', '{$no_peritaje}', '{$observaciones}', '{$nombre_chapa_agente}')";
+$sql = "INSERT INTO consignaciones (fecha_hora, ubicacion_consignacion, no_licencia, no_tarjeta_circulacion, no_peritaje, observaciones, nombre_chapa_agente, estado_pago) VALUES ('{$fecha_hora}', '{$ubicacion_consignacion}', '{$no_licencia}', '{$no_tarjeta_circulacion}', '{$no_peritaje}', '{$observaciones}', '{$nombre_chapa_agente}', '{$estado_pago}')";
 mysqli_query($conn, $sql);
 } 
 
