@@ -95,6 +95,12 @@ if($position=='admin') {
                     </a>
                 </li>
                 <li>
+                    <a href="avisopago.php">
+                        <i class="pe-7s-look"></i>
+                        <p>Aviso Pago y Citacion</p>
+                    </a>
+                </li>
+                <li>
                     <a href="bitacoraactividades.php">
                         <i class="pe-7s-look"></i>
                         <p>Bitacora De Actividades</p>
@@ -170,6 +176,12 @@ if($position=='admin') {
                     <a href="vistaalcoholemia.php">
                         <i class="pe-7s-note2"></i>
                         <p>Listado Boletas Alcoholemia</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="vistaavisopago.php">
+                        <i class="pe-7s-note2"></i>
+                        <p>Listado Boletas Aviso Pago y Citacion</p>
                     </a>
                 </li>
                 <li>

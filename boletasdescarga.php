@@ -20,6 +20,7 @@
                 $boletas = array(
                     "agresiones",
                     "alcoholemia",
+                    "avisopagoycitacion",
                     "bitacoradeactividades",
                     "bitacoraoperativos",
                     "colisiones",
