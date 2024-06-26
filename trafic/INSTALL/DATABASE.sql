@@ -276,6 +276,27 @@ CREATE TABLE fotos_alcoholemia (
   fecha_alcoholemia DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE aviso_pago (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    no_boleta VARCHAR(255) NOT NULL,
+    ubicacion_aviso_pago VARCHAR(255) NOT NULL,
+    dpi_aviso_pago VARCHAR(255) NOT NULL,
+    no_placas VARCHAR(255) NOT NULL,
+    fecha_hora_aviso_pago DATETIME NOT NULL,
+    nombre_completo VARCHAR(255) NOT NULL,
+    descripcion_aviso_pago VARCHAR(255) NOT NULL,
+    tipo_boleta VARCHAR(255) NOT NULL,
+    nombre_chapa_agente VARCHAR(255) NOT NULL,
+    estado_pago VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE fotos_aviso_pago (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  foto varchar(255) NOT NULL,
+  placa_aviso_pago varchar(255) NOT NULL,
+  fecha_aviso_pago DATETIME NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 CREATE TABLE bitacora_actividades (
     id INT AUTO_INCREMENT PRIMARY KEY,
     fecha_hora DATETIME NOT NULL,
