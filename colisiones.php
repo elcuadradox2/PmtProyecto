@@ -46,8 +46,6 @@ if ($last_boleta) {
 <input type="text" id="nombre_chapa_agente" name="nombre_chapa_agente" class="form-control">
 <br>
 <br>
-                            <label>Descargar Boleta De Colisiones</label>
-                            <a href="boletas/colisiones.pdf" class="btn btn-primary" download>Descargar PDF</a>
                             <button type="submit" name="submit" class="btn btn-info btn-fill pull-right">Subir Infraccion</button>
                             <br>
                             <br>
