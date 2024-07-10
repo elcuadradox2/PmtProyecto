@@ -1,6 +1,7 @@
 <?php
 include('configbd.php');
 
+$no_boleta = $_POST['no_boleta'];
 $ubicacion_notificacion = $_POST['ubicacion_notificacion'];
 $fecha_hora_notificacion = $_POST['fecha_hora_notificacion'];
 $nombre_persona_comercio = $_POST['nombre_persona_comercio'];
@@ -54,7 +55,7 @@ mysqli_query($conn, $sql);
   }
 }
 }
-$sql = "INSERT INTO notificaciones (ubicacion_notificacion, fecha_hora_notificacion, nombre_persona_comercio, descripcion_notificacion, tipo_boleta, nombre_chapa_agente, estado_pago) VALUES ('{$ubicacion_notificacion}', '{$fecha_hora_notificacion}', '{$nombre_persona_comercio}', '{$descripcion_notificacion}', '{$tipo_boleta}', '{$nombre_chapa_agente}', '{$estado_pago}')";
+$sql = "INSERT INTO notificaciones (no_boleta, ubicacion_notificacion, fecha_hora_notificacion, nombre_persona_comercio, descripcion_notificacion, tipo_boleta, nombre_chapa_agente, estado_pago) VALUES ('{$no_boleta}', '{$ubicacion_notificacion}', '{$fecha_hora_notificacion}', '{$nombre_persona_comercio}', '{$descripcion_notificacion}', '{$tipo_boleta}', '{$nombre_chapa_agente}', '{$estado_pago}')";
 mysqli_query($conn, $sql);
 } 
 

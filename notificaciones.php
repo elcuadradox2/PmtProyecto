@@ -5,10 +5,26 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="header">
+                            <?php
+include "configbd.php";
 
+// Obtener el último número de boleta de la base de datos
+$query = "SELECT no_boleta FROM notificaciones ORDER BY id DESC LIMIT 1";
+$result = $conn->query($query);
+$last_boleta = $result->fetch_assoc();
+
+if ($last_boleta) {
+    $next_boleta = str_pad((int)$last_boleta['no_boleta'] + 1, 7, '0', STR_PAD_LEFT);
+} else {
+    $next_boleta = '0000001'; // Primer número de boleta si no hay registros
+}
+?>
 <form action="boletanotificaciones.php" method="post" enctype="multipart/form-data">
 
 <h1>Boleta Notificaciones</h1>
+
+<label for="no_boleta">No. boleta:</label> 
+<input type="text" id="no_boleta" name="no_boleta" class="form-control" value="<?php echo $next_boleta; ?>" readonly required>
 
 <label for="ubicacion_notificacion">Ubicación de la notificacion:</label>
 <input type="text" id="ubicacion_notificacion" name="ubicacion_notificacion" class="form-control" required>
