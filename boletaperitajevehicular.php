@@ -1,6 +1,7 @@
 <?php
 include('configbd.php');
 
+$no_boleta = $_POST['no_boleta'];
 $fecha_hora = $_POST['fecha_hora'];
 $placa_peritaje = $_POST['placa_peritaje'];
 $nombre_agente = $_POST['nombre_agente'];
@@ -49,7 +50,7 @@ foreach ($_FILES['fotos_peritaje']['name'] as $i => $name) {
   }
 }
 }
-$sql = "INSERT INTO peritaje_vehicular (fecha_hora, placa_peritaje_vehicular, nombre_agente) VALUES ('{$fecha_hora}', '{$placa_peritaje}', '{$nombre_agente}')";
+$sql = "INSERT INTO peritaje_vehicular (no_boleta, fecha_hora, placa_peritaje_vehicular, nombre_agente) VALUES ('{$no_boleta}', '{$fecha_hora}', '{$placa_peritaje}', '{$nombre_agente}')";
 mysqli_query($conn, $sql);
 } 
 

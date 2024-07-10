@@ -22,7 +22,7 @@ function myFunction() {
 
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[2];
+    td = tr[i].getElementsByTagName("td")[3];
     if (td) {
       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
@@ -36,6 +36,7 @@ function myFunction() {
                                 <table class="table table-hover table-striped" id="myTable">
                                     <thead>
                                         <th>ID</th>
+                                        <th>No. Boleta</th>
                                     	<th>Fecha Y Hora</th>
                                         <th>Placa del vehiculo peritado</th>
                                         <th>Nombre quien ingreso al sistema</th>
@@ -45,16 +46,17 @@ function myFunction() {
 									<?php 
 	$result = $db->prepare("SELECT * FROM peritaje_vehicular_transportes ORDER BY id DESC");
 	$result->execute();
-	for($i=0; $row = $result->fetch(); $i++){
+	while($row = $result->fetch(PDO::FETCH_ASSOC)){
 ?>
                                         <tr>
-										<td><?php echo $row['id']; ?></td>
-                                        <td><?php echo $row['fecha_hora']; ?></td>
-                                        <td><?php echo $row['placa_peritaje_transportes']; ?></td>
-                                        <td><?php echo $row['nombre_agente']; ?></td>
-										<td> <a href="listadovehiculartransportes.php?idFoto=<?php echo $row['id']; ?>">Ver Fotos</a></td>
-                                        <td><a href="deletevehiculartransportes.php?id=<?php echo $row['id']; ?>" title="Click para eliminar la boleta peritaje transportes"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
-                                        </tr>
+    <td><?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['no_boleta'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['fecha_hora'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['placa_peritaje_transportes'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['nombre_agente'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td> <a href="listadovehiculartransportes.php?idFoto=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>">Ver Fotos</a></td>
+    <td><a href="deletevehiculartransportes.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" title="Click para eliminar la boleta peritaje transportes" onclick="return confirm('¿Está seguro de que desea eliminar esta boleta?');"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
+</tr>
 	<?php } ?>
                                     </tbody>
                                     </table>						

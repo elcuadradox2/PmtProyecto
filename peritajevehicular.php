@@ -6,9 +6,27 @@
                         <div class="card">
                             <div class="header">
 
+                            <?php
+include "configbd.php";
+
+// Obtener el último número de boleta de la base de datos
+$query = "SELECT no_boleta FROM peritaje_vehicular ORDER BY id DESC LIMIT 1";
+$result = $conn->query($query);
+$last_boleta = $result->fetch_assoc();
+
+if ($last_boleta) {
+    $next_boleta = str_pad((int)$last_boleta['no_boleta'] + 1, 7, '0', STR_PAD_LEFT);
+} else {
+    $next_boleta = '0000001'; // Primer número de boleta si no hay registros
+}
+?>
+
                             <form action="boletaperitajevehicular.php" method="post" enctype="multipart/form-data">
 
 <h1>Boleta Peritaje Vehicular</h1>
+
+<label for="no_boleta">No. boleta:</label> 
+<input type="text" id="no_boleta" name="no_boleta" class="form-control" value="<?php echo $next_boleta; ?>" readonly required>
 
 <label for="fecha_hora">Fecha Hora Que se ingreso la nueva boleta:</label>
     <input type="datetime-local" id="fecha_hora" name="fecha_hora" class="form-control">
@@ -20,23 +38,11 @@
     <label for="fotos_peritaje">Ingrese Fotos Boleta Peritaje Vehicular</label>
                             <input type="file" name="fotos_peritaje[]" multiple accept="image/*"  class="form-control" required>
   <br>
-
-  <?php 
-							  $user=$_SESSION['SESS_MEMBER_ID'];
-	$result = $db->prepare("SELECT id,username,name FROM user WHERE id='$user'");
-	$result->execute();
-	for($i=0; $row = $result->fetch(); $i++){
-?>
  
     <label for="nombre_agente">Nombre del agente:</label>
-    <input type="text" id="nombre_agente" name="nombre_agente"  class="form-control" value="<?php echo $row['username']; ?>" readonly>
-
-    <?php }?>
+    <input type="text" id="nombre_agente" name="nombre_agente"  class="form-control" >
 
     <br>
-
-<label>Descargar Boleta De Peritaje Vehicular</label>
-<a href="boletas/peritajevehicular.pdf" class="btn btn-primary" download>Descargar PDF</a>
 
 <button type="submit" name="submit" class="btn btn-info btn-fill pull-right">Subir Infraccion</button>
 <br>
