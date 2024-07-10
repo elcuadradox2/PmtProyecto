@@ -48,18 +48,19 @@ function myFunction() {
 									<?php 
 	$result = $db->prepare("SELECT * FROM colisiones ORDER BY id DESC");
 	$result->execute();
-	for($i=0; $row = $result->fetch(); $i++){
+	while($row = $result->fetch(PDO::FETCH_ASSOC)){
 ?>
-                                        <tr>
-										                    <td><?php echo $row['id']; ?></td>
-                                        <td><?php echo $row['fecha_hora']; ?></td>
-                                        <td><?php echo $row['licencias']; ?></td>
-                                        <td><?php echo $row['tarjetas_circulacion']; ?></td>
-											                  <td><?php echo $row['observaciones']; ?></td>
-                                        <td><?php echo $row['nombre_chapa_agente']; ?></td>
-											                  <td> <a href="listadocolisiones.php?idFoto=<?php echo $row['id']; ?>">Ver Fotos</a></td>
-                                        <td><a href="deletecolisiones.php?id=<?php echo $row['id']; ?>" title="Click para eliminar la boleta colisiones"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
-                                        </tr>
+                                       <tr>
+    <td><?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['no_boleta'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['fecha_hora'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['licencias'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['tarjetas_circulacion'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['observaciones'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><?php echo htmlspecialchars($row['nombre_chapa_agente'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td> <a href="listadocolisiones.php?idFoto=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>">Ver Fotos</a></td>
+    <td><a href="deletecolisiones.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" title="Click para eliminar la boleta colisiones" onclick="return confirm('¿Está seguro de que desea eliminar esta boleta?');"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
+</tr>
 	<?php } ?>
                                             </tbody>
                                           </table>						

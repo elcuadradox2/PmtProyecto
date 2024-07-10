@@ -164,6 +164,7 @@ ALTER TABLE `user`
 
 CREATE TABLE colisiones (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    no_boleta VARCHAR(255) NOT NULL,
     fecha_hora DATETIME NOT NULL,
     licencias VARCHAR(255) NOT NULL,
     tarjetas_circulacion VARCHAR(255) NOT NULL,
@@ -182,6 +183,7 @@ CREATE TABLE fotos_colisiones (
 
 CREATE TABLE consignaciones (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    no_boleta VARCHAR(255) NOT NULL,
     fecha_hora DATETIME NOT NULL,
     ubicacion_consignacion VARCHAR(255) NOT NULL,
     no_licencia VARCHAR(255) NOT NULL,
@@ -201,6 +203,7 @@ CREATE TABLE fotos_consignaciones (
 
 CREATE TABLE remociones (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    no_boleta VARCHAR(255) NOT NULL,
     ubicacion_remocion VARCHAR(255) NOT NULL,
     fecha_hora_remocion DATETIME NOT NULL,
     nombre_persona_comercio VARCHAR(255) NOT NULL,
@@ -219,6 +222,7 @@ CREATE TABLE fotos_remociones (
 
 CREATE TABLE notificaciones (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    no_boleta VARCHAR(255) NOT NULL,
     ubicacion_notificacion VARCHAR(255) NOT NULL,
     fecha_hora_notificacion DATETIME NOT NULL,
     nombre_persona_comercio VARCHAR(255) NOT NULL,
@@ -237,6 +241,7 @@ CREATE TABLE fotos_notificaciones (
 
 CREATE TABLE agresiones (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    no_boleta VARCHAR(255) NOT NULL,
     nombre_chapa VARCHAR(255) NOT NULL,
     lugar VARCHAR(255) NOT NULL,
     fecha_hora DATETIME NOT NULL,
@@ -257,6 +262,7 @@ CREATE TABLE fotos_agresiones (
 
 CREATE TABLE alcoholemia (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    no_boleta VARCHAR(255) NOT NULL,
     fecha_hora DATETIME NOT NULL,
     lugar_prueba VARCHAR(255) NOT NULL,
     nombre_conductor VARCHAR(255) NOT NULL,
@@ -336,6 +342,7 @@ CREATE TABLE fotos_entrevista (
 
 CREATE TABLE peritaje_vehicular_transportes (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    no_boleta VARCHAR(255) NOT NULL,
     fecha_hora DATETIME NOT NULL,
     placa_peritaje_transportes VARCHAR(255) NOT NULL,
     nombre_agente VARCHAR(255) NOT NULL
@@ -350,6 +357,7 @@ CREATE TABLE fotos_peritaje_transportes (
 
 CREATE TABLE peritaje_vehicular (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    no_boleta VARCHAR(255) NOT NULL,
     fecha_hora DATETIME NOT NULL,
     placa_peritaje_vehicular VARCHAR(255) NOT NULL,
     nombre_agente VARCHAR(255) NOT NULL

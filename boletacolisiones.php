@@ -1,6 +1,7 @@
 <?php
 include('configbd.php');
 
+$no_boleta = $_POST['no_boleta'];
 $fecha_hora = $_POST['fecha_hora'];
 $licencias = $_POST['licencias'];
 $tarjetas_circulacion = $_POST['tarjetas_circulacion'];
@@ -52,7 +53,7 @@ mysqli_query($conn, $sql);
   }
 }
 }
-$sql = "INSERT INTO colisiones (fecha_hora, licencias, tarjetas_circulacion, observaciones, nombre_chapa_agente) VALUES ('{$fecha_hora}', '{$licencias}', '{$tarjetas_circulacion}', '{$observaciones}', '{$nombre_chapa_agente}')";
+$sql = "INSERT INTO colisiones (no_boleta, fecha_hora, licencias, tarjetas_circulacion, observaciones, nombre_chapa_agente) VALUES ('{$no_boleta}', '{$fecha_hora}', '{$licencias}', '{$tarjetas_circulacion}', '{$observaciones}', '{$nombre_chapa_agente}')";
 mysqli_query($conn, $sql);
 } 
 
