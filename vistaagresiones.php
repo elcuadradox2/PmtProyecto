@@ -22,7 +22,7 @@ function myFunction() {
 
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[5];
+    td = tr[i].getElementsByTagName("td")[6];
     if (td) {
       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
@@ -36,6 +36,7 @@ function myFunction() {
                                 <table class="table table-hover table-striped" id="myTable">
                                     <thead>
                                         <th>ID</th>
+                                        <th>No. Boleta</th>
                                         <th>Nombre O Chapa del agente</th>
                                         <th>Lugar del hecho</th>
                                         <th>Fecha y Hora</th>
@@ -56,6 +57,7 @@ function myFunction() {
 ?>
                                         <tr>
                                         <td><?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                        <td><?php echo htmlspecialchars($row['no_boleta'], ENT_QUOTES, 'UTF-8'); ?></td>
                                         <td><?php echo htmlspecialchars($row['nombre_chapa'], ENT_QUOTES, 'UTF-8'); ?></td>
                                         <td><?php echo htmlspecialchars($row['lugar'], ENT_QUOTES, 'UTF-8'); ?></td>
                                         <td><?php echo htmlspecialchars($row['fecha_hora'], ENT_QUOTES, 'UTF-8'); ?></td>

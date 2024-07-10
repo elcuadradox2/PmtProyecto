@@ -1,6 +1,7 @@
 <?php
 include('configbd.php');
 
+$no_boleta = $_POST['no_boleta'];
 $nombre_chapa = $_POST['nombre_chapa'];
 $lugar = $_POST['lugar'];
 $fecha_hora = $_POST['fecha_hora'];
@@ -56,7 +57,7 @@ mysqli_query($conn, $sql);
   }
 }
 }
-$sql = "INSERT INTO agresiones (nombre_chapa, lugar, fecha_hora, nombre, no_licencia, no_placa, tipo_boleta, nombre_chapa_agente, estado_pago) VALUES ('{$nombre_chapa}', '{$lugar}', '{$fecha_hora}', '{$nombre}', '{$no_licencia}', '{$no_placa}' , '{$tipo_boleta}' , '{$nombre_chapa_agente}', '{$estado_pago}')";
+$sql = "INSERT INTO agresiones (no_boleta, nombre_chapa, lugar, fecha_hora, nombre, no_licencia, no_placa, tipo_boleta, nombre_chapa_agente, estado_pago) VALUES ('{$no_boleta}', '{$nombre_chapa}', '{$lugar}', '{$fecha_hora}', '{$nombre}', '{$no_licencia}', '{$no_placa}' , '{$tipo_boleta}' , '{$nombre_chapa_agente}', '{$estado_pago}')";
 mysqli_query($conn, $sql);
 } 
 
