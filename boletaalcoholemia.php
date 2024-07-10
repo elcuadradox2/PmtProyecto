@@ -1,6 +1,7 @@
 <?php
 include('configbd.php');
 
+$no_boleta = $_POST['no_boleta'];
 $fecha_hora = $_POST['fecha_hora'];
 $lugar_prueba = $_POST['lugar_prueba'];
 $nombre_conductor = $_POST['nombre_conductor'];
@@ -57,7 +58,7 @@ mysqli_query($conn, $sql);
   }
 }
 }
-$sql = "INSERT INTO alcoholemia (fecha_hora, lugar_prueba, nombre_conductor, domicilio_conductor, no_licencia, tarjeta_circulacion, no_placas, tipo_boleta, nombre_chapa_agente, estado_pago) VALUES ('{$fecha_hora}', '{$lugar_prueba}', '{$nombre_conductor}', '{$domicilio_conductor}', '{$no_licencia}' , '{$tarjeta_circulacion}' , '{$no_placas}' , '{$tipo_boleta}' , '{$nombre_chapa_agente}', '{$estado_pago}')";
+$sql = "INSERT INTO alcoholemia (no_boleta, fecha_hora, lugar_prueba, nombre_conductor, domicilio_conductor, no_licencia, tarjeta_circulacion, no_placas, tipo_boleta, nombre_chapa_agente, estado_pago) VALUES ('{$no_boleta}', '{$fecha_hora}', '{$lugar_prueba}', '{$nombre_conductor}', '{$domicilio_conductor}', '{$no_licencia}' , '{$tarjeta_circulacion}' , '{$no_placas}' , '{$tipo_boleta}' , '{$nombre_chapa_agente}', '{$estado_pago}')";
 mysqli_query($conn, $sql);
 } 
 
