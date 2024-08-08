@@ -306,8 +306,7 @@ CREATE TABLE fotos_aviso_pago (
 CREATE TABLE bitacora_actividades (
     id INT AUTO_INCREMENT PRIMARY KEY,
     fecha_hora DATETIME NOT NULL,
-    nombre_agente VARCHAR(255) NOT NULL,
-    status VARCHAR(255) NOT NULL
+    nombre_agente VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE fotos_actividades (

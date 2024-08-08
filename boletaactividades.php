@@ -3,7 +3,6 @@ include('configbd.php');
 
 $fecha_hora = $_POST['fecha_hora'];
 $nombre_agente = $_POST['nombre_agente'];
-$status = $_POST['status'];
 
 //Verificando si existe el directorio
 $dirLocal = "files_bitacoraactividades";
@@ -49,7 +48,7 @@ mysqli_query($conn, $sql);
   }
 }
 }
-$sql = "INSERT INTO bitacora_actividades (fecha_hora, nombre_agente, status) VALUES ('{$fecha_hora}', '{$nombre_agente}', '{$status}')";
+$sql = "INSERT INTO bitacora_actividades (fecha_hora, nombre_agente) VALUES ('{$fecha_hora}', '{$nombre_agente}')";
     mysqli_query($conn, $sql);
 } 
 

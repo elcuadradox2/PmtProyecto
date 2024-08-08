@@ -21,12 +21,6 @@
     <input type="text" id="nombre_agente" name="nombre_agente"  class="form-control" >
 <br>
 
-<label for="status">Estado de Pago:</label>
-<input type="text" id="status" name="status" class="form-control" value="No Pagado" readonly>
-<br>
-
-
-
 <button type="submit" name="submit" class="btn btn-info btn-fill pull-right">Subir Infraccion</button>
 <br>
 <br>

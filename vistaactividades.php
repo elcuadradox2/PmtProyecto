@@ -38,7 +38,6 @@
                                 <th>ID</th>
                                 <th>Fecha y Hora</th>
                                 <th>Nombre quien ingresó al sistema</th>
-                                <th>Estado de Pago</th>
                                 <th>Fotos</th>
                                 <th>Acciones</th>
                             </thead>
@@ -52,13 +51,7 @@
                                     <td><?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?></td>
                                     <td><?php echo htmlspecialchars($row['fecha_hora'], ENT_QUOTES, 'UTF-8'); ?></td>
                                     <td><?php echo htmlspecialchars($row['nombre_agente'], ENT_QUOTES, 'UTF-8'); ?></td>
-                                    <td><?php echo htmlspecialchars($row['status'], ENT_QUOTES, 'UTF-8'); ?></td>
                                     <td><a href="listadoactividades.php?idFoto=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>">Ver Fotos</a></td>
-                                    <td>
-                                        <a href="cambiarEstadoPago.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-success btn-sm" onclick="return confirm('¿Está seguro de que desea eliminar esta entrada?');">
-                                            <?php echo $row['status'] === 'No Pagado' ? 'Marcar como Pagado' : 'Marcar como No Pagado'; ?>
-                                        </a>
-                                    </td>
                                     <td><a href="deleteactividades.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" title="Click para eliminar la boleta bitacora actividades" onclick="return confirm('¿Está seguro de que desea eliminar esta entrada?');"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
                                 </tr>
                             <?php } ?>
