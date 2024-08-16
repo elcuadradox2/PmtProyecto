@@ -1,3 +1,18 @@
+<?php
+include('configbd.php');
+session_start();
+
+if (!isset($_SESSION['SESS_FIRST_NAME'])) {
+    header("location: login.php");
+    exit();
+}
+
+$position = $_SESSION['SESS_LAST_NAME'];
+if ($position == 'agente') {
+    header("location: boletasdescarga.php");
+    exit();
+}
+?>
 <?php include "sidebar.php" ?>
 <div class="content">
     <div class="container-fluid">
@@ -19,9 +34,9 @@
                                         for($i=0; $row = $result->fetch(); $i++){
                                     ?>
                                         <tr>
-                                            <td><?php echo $row['licencias']; ?></td>
+                                            <td><?php echo htmlspecialchars($row['licencias'], ENT_QUOTES, 'UTF-8'); ?></td>
                                             <td class="td-actions text-right">
-                                                <span style="padding:2px; background-color:#1DC7EA; color:#FFF;"><?php echo $row['fecha_hora']; ?></span>
+                                                <span style="padding:2px; background-color:#1DC7EA; color:#FFF;"><?php echo htmlspecialchars($row['fecha_hora'], ENT_QUOTES, 'UTF-8'); ?></span>
                                             </td>
                                         </tr>
                                     <?php } ?>
@@ -48,9 +63,9 @@
                                         for($i=0; $row = $result->fetch(); $i++){
                                     ?>
                                         <tr>
-                                            <td><?php echo $row['no_licencia']; ?></td>
+                                            <td><?php echo htmlspecialchars($row['no_licencia'], ENT_QUOTES, 'UTF-8'); ?></td>
                                             <td class="td-actions text-right">
-                                                <span style="padding:2px; background-color:#1DC7EA; color:#FFF;"><?php echo $row['fecha_hora']; ?></span>
+                                                <span style="padding:2px; background-color:#1DC7EA; color:#FFF;"><?php echo htmlspecialchars($row['fecha_hora'], ENT_QUOTES, 'UTF-8'); ?></span>
                                             </td>
                                         </tr>
                                     <?php } ?>
@@ -79,9 +94,9 @@
                                         for($i=0; $row = $result->fetch(); $i++){
                                     ?>
                                         <tr>
-                                            <td><?php echo $row['placa_peritaje_transportes']; ?></td>
+                                            <td><?php echo htmlspecialchars($row['placa_peritaje_transportes'], ENT_QUOTES, 'UTF-8'); ?></td>
                                             <td class="td-actions text-right">
-                                                <span style="padding:2px; background-color:#1DC7EA; color:#FFF;"><?php echo $row['fecha_hora']; ?></span>
+                                                <span style="padding:2px; background-color:#1DC7EA; color:#FFF;"><?php echo htmlspecialchars($row['fecha_hora'], ENT_QUOTES, 'UTF-8'); ?></span>
                                             </td>
                                         </tr>
                                     <?php } ?>
