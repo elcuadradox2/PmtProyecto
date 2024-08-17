@@ -76,27 +76,114 @@ if ($position == 'agente') {
                 </div>
             </div>
         </div>
-        <!-- Peritaje Vehicular Transportes boleta -->
+        <!-- Aviso Pago y Alcoholemia boleta -->
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
                     <div class="header">
                         <h4 class="title">Ultimas</h4>
-                        <p class="category">Boletas Peritaje Vehicular Transportes</p>
+                        <p class="category">Boletas Aviso Pago</p>
                     </div>
                     <div class="content">
                         <div class="table-full-width">
                             <table class="table">
                                 <tbody>
                                     <?php
-                                        $result = $db->prepare("SELECT * FROM peritaje_vehicular_transportes ORDER BY id DESC limit 3");
+                                        $result = $db->prepare("SELECT * FROM aviso_pago ORDER BY id DESC limit 3");
                                         $result->execute();
                                         for($i=0; $row = $result->fetch(); $i++){
                                     ?>
                                         <tr>
-                                            <td><?php echo htmlspecialchars($row['placa_peritaje_transportes'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                            <td><?php echo htmlspecialchars($row['dpi_aviso_pago'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                            <td class="td-actions text-right">
+                                                <span style="padding:2px; background-color:#1DC7EA; color:#FFF;"><?php echo htmlspecialchars($row['fecha_hora_aviso_pago'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Ultimas</h4>
+                        <p class="category">Boletas Alcoholemia</p>
+                    </div>
+                    <div class="content">
+                        <div class="table-full-width">
+                            <table class="table">
+                                <tbody>
+                                    <?php
+                                        $result = $db->prepare("SELECT * FROM alcoholemia ORDER BY id DESC limit 3");
+                                        $result->execute();
+                                        for($i=0; $row = $result->fetch(); $i++){
+                                    ?>
+                                        <tr>
+                                            <td><?php echo htmlspecialchars($row['no_placas'], ENT_QUOTES, 'UTF-8'); ?></td>
                                             <td class="td-actions text-right">
                                                 <span style="padding:2px; background-color:#1DC7EA; color:#FFF;"><?php echo htmlspecialchars($row['fecha_hora'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- Notificaciones y Remociones boleta -->
+         <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Ultimas</h4>
+                        <p class="category">Boletas Notificaciones</p>
+                    </div>
+                    <div class="content">
+                        <div class="table-full-width">
+                            <table class="table">
+                                <tbody>
+                                    <?php
+                                        $result = $db->prepare("SELECT * FROM notificaciones ORDER BY id DESC limit 3");
+                                        $result->execute();
+                                        for($i=0; $row = $result->fetch(); $i++){
+                                    ?>
+                                        <tr>
+                                            <td><?php echo htmlspecialchars($row['ubicacion_notificacion'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                            <td class="td-actions text-right">
+                                                <span style="padding:2px; background-color:#1DC7EA; color:#FFF;"><?php echo htmlspecialchars($row['fecha_hora_notificacion'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Ultimas</h4>
+                        <p class="category">Boletas Remociones</p>
+                    </div>
+                    <div class="content">
+                        <div class="table-full-width">
+                            <table class="table">
+                                <tbody>
+                                    <?php
+                                        $result = $db->prepare("SELECT * FROM remociones ORDER BY id DESC limit 3");
+                                        $result->execute();
+                                        for($i=0; $row = $result->fetch(); $i++){
+                                    ?>
+                                        <tr>
+                                            <td><?php echo htmlspecialchars($row['ubicacion_remocion'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                            <td class="td-actions text-right">
+                                                <span style="padding:2px; background-color:#1DC7EA; color:#FFF;"><?php echo htmlspecialchars($row['fecha_hora_remocion'], ENT_QUOTES, 'UTF-8'); ?></span>
                                             </td>
                                         </tr>
                                     <?php } ?>
