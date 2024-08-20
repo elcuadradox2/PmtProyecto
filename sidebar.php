@@ -70,6 +70,12 @@ if($position=='agente') {
                         <p>Boletas</p>
                     </a>
                 </li>
+                <li class="">
+                    <a href="subirimagenes.php">
+                        <i class="pe-7s-graph"></i>
+                        <p>Subir Boleta</p>
+                    </a>
+                </li>
 			 </ul>
 <?php
 }
@@ -82,88 +88,10 @@ if($position=='admin') {
                         <p>Menu</p>
                     </a>
                 </li>
-                <li>
-                    <a href="agresiones.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Agresiones</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="alcoholemia.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Alcoholemia</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="avisopago.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Aviso Pago y Citacion</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="bitacoraactividades.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Bitacora De Actividades</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="bitacoraoperativos.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Bitacora De Operativos</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="consignaciones.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Consignaciones</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="colisiones.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Colisiones</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="entrevista.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Entrevista</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="notificaciones.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Notificaciones</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="peritajevehiculartransportes.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Peritaje Vehicular Transportes</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="peritajevehicular.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Peritaje Vehicular</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="remociones.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Remociones</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="reporteinterno.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Reporte Interno</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="serviciossociales.php">
-                        <i class="pe-7s-look"></i>
-                        <p>Servicios Sociales</p>
+                <li class="">
+                    <a href="mostrarfotosboleta.php">
+                        <i class="pe-7s-graph"></i>
+                        <p>Fotos Agentes Boletas</p>
                     </a>
                 </li>
                 <li>
@@ -282,6 +210,13 @@ if($position=='digitalizador') {
                 <p>Menu</p>
             </a>
         </li>
+        <li>
+        <li class="">
+                    <a href="mostrarfotosboleta.php">
+                        <i class="pe-7s-graph"></i>
+                        <p>Fotos Agentes Boletas</p>
+                    </a>
+                </li>
         <li>
                     <a href="agresiones.php">
                         <i class="pe-7s-look"></i>

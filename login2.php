@@ -17,10 +17,7 @@ if (!$link) {
 // Función para limpiar y escapar las entradas para prevenir inyección SQL
 function clean($link, $str) {
     $str = trim($str);
-    if (function_exists('mysqli_real_escape_string')) {
-        $str = mysqli_real_escape_string($link, $str);
-    }
-    return $str;
+    return mysqli_real_escape_string($link, $str);
 }
 
 // Sanitizar las entradas POST
@@ -68,20 +65,26 @@ if ($stmt) {
             $_SESSION['SESS_LAST_NAME'] = $position;
             $_SESSION['SESS_PRO_PIC'] = $username;
             mysqli_stmt_close($stmt);
+            mysqli_close($link);
             session_write_close();
             header("location: index.php");
             exit();
         } else {
             // Contraseña incorrecta
+            mysqli_stmt_close($stmt);
+            mysqli_close($link);
             header("location: login.php");
             exit();
         }
     } else {
         // Usuario no encontrado
+        mysqli_stmt_close($stmt);
+        mysqli_close($link);
         header("location: login.php");
         exit();
     }
 } else {
+    mysqli_close($link);
     die("Query failed");
 }
 ?>
