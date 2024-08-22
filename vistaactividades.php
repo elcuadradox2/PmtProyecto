@@ -52,7 +52,9 @@
                                     <td><?php echo htmlspecialchars($row['fecha_hora'], ENT_QUOTES, 'UTF-8'); ?></td>
                                     <td><?php echo htmlspecialchars($row['nombre_agente'], ENT_QUOTES, 'UTF-8'); ?></td>
                                     <td><a href="listadoactividades.php?idFoto=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>">Ver Fotos</a></td>
-                                    <td><a href="deleteactividades.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" title="Click para eliminar la boleta bitacora actividades" onclick="return confirm('¿Está seguro de que desea eliminar esta entrada?');"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
+                                    <td>
+                                        <a href="deleteactividades.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" title="Click para eliminar la boleta bitacora actividades" onclick="return confirm('¿Está seguro de que desea eliminar esta entrada?');"><i class="fa fa-trash fa-lg text-danger"></i></a>
+                                    </td>
                                 </tr>
                             <?php } ?>
                             </tbody>
