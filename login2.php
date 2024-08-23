@@ -38,7 +38,7 @@ if ($password == '') {
 if ($errflag) {
     $_SESSION['ERRMSG_ARR'] = $errmsg_arr;
     session_write_close();
-    header("location: index.php");
+    header("location: login.php");
     exit();
 }
 
@@ -71,6 +71,8 @@ if ($stmt) {
             exit();
         } else {
             // Contraseña incorrecta
+            $errmsg_arr[] = 'Contraseña incorrecta';
+            $_SESSION['ERRMSG_ARR'] = $errmsg_arr;
             mysqli_stmt_close($stmt);
             mysqli_close($link);
             header("location: login.php");
@@ -78,6 +80,8 @@ if ($stmt) {
         }
     } else {
         // Usuario no encontrado
+        $errmsg_arr[] = 'Usuario no encontrado';
+        $_SESSION['ERRMSG_ARR'] = $errmsg_arr;
         mysqli_stmt_close($stmt);
         mysqli_close($link);
         header("location: login.php");

@@ -16,6 +16,9 @@ $siteSettings = $stmt->fetch(PDO::FETCH_ASSOC);
 if (!$siteSettings) {
     die('Error al obtener la configuración del sitio.');
 }
+
+$errorMessages = isset($_SESSION['ERRMSG_ARR']) ? $_SESSION['ERRMSG_ARR'] : [];
+unset($_SESSION['ERRMSG_ARR']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +50,13 @@ if (!$siteSettings) {
                 <div class="icon-head">
                     <h2>Inicia Sesión</h2>
                 </div>
+                <?php if (!empty($errorMessages)): ?>
+                    <div class="error-message">
+                        <?php foreach ($errorMessages as $message): ?>
+                            <p><?php echo htmlspecialchars($message); ?></p>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
                 <div class="form-left-w3l">
                     <input type="text" name="username" placeholder="Usuario" required="">
                     <div class="clear"></div>
