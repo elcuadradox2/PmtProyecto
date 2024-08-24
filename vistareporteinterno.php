@@ -51,7 +51,11 @@ function myFunction() {
                                         <td><?php echo $row['fecha_hora']; ?></td>
                                         <td><?php echo $row['nombre_agente']; ?></td>
 										<td> <a href="listadoreporteinterno.php?idFoto=<?php echo $row['id']; ?>">Ver Fotos</a></td>
-                                        <td><a href="deletereporteinterno.php?id=<?php echo $row['id']; ?>" title="Click para eliminar la boleta reporte interno"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
+                                        <td>
+                                            <a href="deletereporteinterno.php?id=<?php echo $row['id']; ?>" title="Click para eliminar la boleta reporte interno" onclick="return confirm('¿Estás seguro de que deseas eliminar esta boleta de reporte interno?')">
+                                                <i class="fa fa-trash fa-lg text-danger"></i>
+                                            </a>
+                                        </td>
                                         </tr>
 	<?php } ?>
                                     </tbody>

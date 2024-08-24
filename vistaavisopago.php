@@ -73,7 +73,7 @@
                                             <?php echo htmlspecialchars($row['estado_pago'] === 'No Pagado' ? 'Marcar como Pagado' : 'Marcar como No Pagado', ENT_QUOTES, 'UTF-8'); ?>
                                         </a>
                                         <a href="editaavisopago.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" class="fa fa-edit fa-lg text-warning"></a>
-                                        <a href="deleteavisopago.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" title="Click para eliminar la boleta agresiones"><i class="fa fa-trash fa-lg text-danger"></i></a>
+                                        <a href="deleteavisopago.php?id=<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>" title="Click para eliminar la boleta agresiones" onclick="return confirm('¿Está seguro de que desea eliminar esta boleta?');"><i class="fa fa-trash fa-lg text-danger"></i></a>
                                     </td>
                                 </tr>
                                 <?php } ?>

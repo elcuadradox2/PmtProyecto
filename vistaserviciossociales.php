@@ -51,7 +51,11 @@ function myFunction() {
                                         <td><?php echo $row['fecha_hora']; ?></td>
                                         <td><?php echo $row['nombre_agente']; ?></td>
 										<td> <a href="listadoserviciossociales.php?idFoto=<?php echo $row['id']; ?>">Ver Fotos</a></td>
-                                        <td><a href="deleteserviciossociales.php?id=<?php echo $row['id']; ?>" title="Click para eliminar la boleta servicios sociales"><i class="fa fa-trash fa-lg text-danger"></i></a></td>
+                                        <td>
+                                            <a href="deleteserviciossociales.php?id=<?php echo $row['id']; ?>" title="Click para eliminar la boleta servicios sociales" onclick="return confirm('¿Estás seguro de que deseas eliminar esta boleta de servicios sociales?')">
+                                                <i class="fa fa-trash fa-lg text-danger"></i>
+                                            </a>
+                                        </td>
                                         </tr>
 	<?php } ?>
                                     </tbody>
