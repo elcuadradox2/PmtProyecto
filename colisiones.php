@@ -1,4 +1,4 @@
-<?php include"sidebar.php"; ?>
+<?php include "sidebar.php"; ?>
 <div class="content">
     <div class="container-fluid">
         <div class="row">
@@ -19,10 +19,10 @@ if ($last_boleta) {
     $next_boleta = '0000001'; // Primer número de boleta si no hay registros
 }
 ?>
-                        <form action="boletacolisiones.php" method="POST" enctype="multipart/form-data">
+                        <form action="boletacolisiones.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
                             <h1>Boleta Colisiones</h1>
                             <label for="no_boleta">No. boleta:</label> 
-<input type="text" id="no_boleta" name="no_boleta" class="form-control" value="<?php echo $next_boleta; ?>" readonly required>
+                            <input type="text" id="no_boleta" name="no_boleta" class="form-control" value="<?php echo $next_boleta; ?>" readonly required>
 
                             <label for="fecha_hora">Fecha Hora Que se ingreso la nueva boleta:</label>
                             <input type="datetime-local" id="fecha_hora" name="fecha_hora" class="form-control">
@@ -35,17 +35,17 @@ if ($last_boleta) {
                             <br>
                             <textarea name="tarjetas_circulacion" id="tarjetas_circulacion" class="form-control" cols="30" rows="5"></textarea>
                             <br>
-                            <label for="fotos_colisiones">Ingrese Fotos Colisiones</label>
-                            <input type="file" name="fotos_colisiones[]" multiple accept="image/*"  class="form-control" required>
+                            <label for="fotos_colisiones">Ingrese Fotos Colisiones (Máximo 10 fotos)</label>
+                            <input type="file" name="fotos_colisiones[]" id="fotos_colisiones" multiple accept="image/*" class="form-control" required>
                             <label for="observaciones">Observaciones</label>
                             <br>
-                            <textarea name="observaciones" id="observaciones"  class="form-control" cols="30" rows="5"></textarea>
+                            <textarea name="observaciones" id="observaciones" class="form-control" cols="30" rows="5"></textarea>
                             <br>
 
-<label for="nombre_chapa_agente">Nombre del agente:</label> 
-<input type="text" id="nombre_chapa_agente" name="nombre_chapa_agente" class="form-control">
-<br>
-<br>
+                            <label for="nombre_chapa_agente">Nombre del agente:</label> 
+                            <input type="text" id="nombre_chapa_agente" name="nombre_chapa_agente" class="form-control">
+                            <br>
+                            <br>
                             <button type="submit" name="submit" class="btn btn-info btn-fill pull-right">Subir Infraccion</button>
                             <br>
                             <br>
@@ -56,4 +56,25 @@ if ($last_boleta) {
         </div>
     </div>
 </div>
-<?php include"footer.php"; ?>
+<?php include "footer.php"; ?>
+
+<script>
+function validateForm() {
+    var input = document.getElementById('fotos_colisiones');
+    if (input.files.length > 10) {
+        alert('No se pueden subir más de 10 fotos.');
+        return false;
+    }
+    return true;
+}
+
+<?php if (isset($_GET['status'])): ?>
+    <?php if ($_GET['status'] == 'success'): ?>
+        alert('Formulario enviado correctamente.');
+    <?php elseif ($_GET['status'] == 'error'): ?>
+        alert('Hubo un error al enviar el formulario.');
+    <?php elseif (isset($_GET['message']) && $_GET['message'] == 'too_many_files'): ?>
+        alert('No se pueden subir más de 10 fotos.');
+    <?php endif; ?>
+<?php endif; ?>
+</script>

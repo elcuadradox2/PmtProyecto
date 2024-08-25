@@ -1,70 +1,90 @@
-<?php include"sidebar.php"; ?>
+<?php include "sidebar.php"; ?>
 <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="header">
-                            <?php
-include "configbd.php";
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <?php
+                        include "configbd.php";
 
-// Obtener el último número de boleta de la base de datos
-$query = "SELECT no_boleta FROM remociones ORDER BY id DESC LIMIT 1";
-$result = $conn->query($query);
-$last_boleta = $result->fetch_assoc();
+                        // Obtener el último número de boleta de la base de datos
+                        $query = "SELECT no_boleta FROM remociones ORDER BY id DESC LIMIT 1";
+                        $result = $conn->query($query);
+                        $last_boleta = $result->fetch_assoc();
 
-if ($last_boleta) {
-    $next_boleta = str_pad((int)$last_boleta['no_boleta'] + 1, 7, '0', STR_PAD_LEFT);
-} else {
-    $next_boleta = '0000001'; // Primer número de boleta si no hay registros
-}
-?>
-<form action="boletaremociones.php" method="post" enctype="multipart/form-data">
+                        if ($last_boleta) {
+                            $next_boleta = str_pad((int)$last_boleta['no_boleta'] + 1, 7, '0', STR_PAD_LEFT);
+                        } else {
+                            $next_boleta = '0000001'; // Primer número de boleta si no hay registros
+                        }
+                        ?>
+                        <form action="boletaremociones.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
 
-<h1>Boleta Remociones</h1>
+                            <h1>Boleta Remociones</h1>
 
-<label for="no_boleta">No. boleta:</label> 
-<input type="text" id="no_boleta" name="no_boleta" class="form-control" value="<?php echo $next_boleta; ?>" readonly required>
+                            <label for="no_boleta">No. boleta:</label>
+                            <input type="text" id="no_boleta" name="no_boleta" class="form-control" value="<?php echo $next_boleta; ?>" readonly required>
 
-<label for="ubicacion_remocion">Ubicación de la remoción:</label> 
-<input type="text" id="ubicacion_remocion" name="ubicacion_remocion" class="form-control" required> 
+                            <label for="ubicacion_remocion">Ubicación de la remoción:</label>
+                            <input type="text" id="ubicacion_remocion" name="ubicacion_remocion" class="form-control" required>
 
-<label for="fecha_hora_remocion">Fecha y Hora de la Remocion:</label>
-<input type="datetime-local" id="fecha_hora_remocion" name="fecha_hora_remocion" class="form-control"> 
+                            <label for="fecha_hora_remocion">Fecha y Hora de la Remocion:</label>
+                            <input type="datetime-local" id="fecha_hora_remocion" name="fecha_hora_remocion" class="form-control">
 
-<label for="nombre_persona_comercio">Nombre de la Persona o Comercio:</label> 
-<input type="text" id="nombre_persona_comercio" name="nombre_persona_comercio" class="form-control"> 
+                            <label for="nombre_persona_comercio">Nombre de la Persona o Comercio:</label>
+                            <input type="text" id="nombre_persona_comercio" name="nombre_persona_comercio" class="form-control">
 
-<label for="descripcion_consignacion">Descripción de Objetos consignados por la Autoridad:</label> 
-<textarea id="descripcion_consignacion" name="descripcion_consignacion" class="form-control"></textarea> 
+                            <label for="descripcion_consignacion">Descripción de Objetos consignados por la Autoridad:</label>
+                            <textarea id="descripcion_consignacion" name="descripcion_consignacion" class="form-control"></textarea>
 
-<label for="fotos_remociones">Ingrese Fotos Remocion</label>
-<input type="file" name="fotos_remociones[]" multiple accept="image/*"  class="form-control" required>
+                            <label for="fotos_remociones">Ingrese Fotos Remocion (Máximo 10 fotos)</label>
+                            <input type="file" name="fotos_remociones[]" id="fotos_remociones" multiple accept="image/*" class="form-control" required>
 
-<label for="tipo_boleta">Tipo de boleta:</label>
-  <select id="tipo_boleta" name="tipo_boleta" class="form-control" required>
-    <option selected disabled>Seleccione el tipo de boleta</option>
-    <option value="de pago">De Pago</option>
-    <option value="educativa">Educativa</option>
-  </select>
+                            <label for="tipo_boleta">Tipo de boleta:</label>
+                            <select id="tipo_boleta" name="tipo_boleta" class="form-control" required>
+                                <option selected disabled>Seleccione el tipo de boleta</option>
+                                <option value="de pago">De Pago</option>
+                                <option value="educativa">Educativa</option>
+                            </select>
 
-<label for="nombre_chapa_agente">Nombre del agente:</label> 
-<input type="text" id="nombre_chapa_agente" name="nombre_chapa_agente" class="form-control" required>
-<br>
+                            <label for="nombre_chapa_agente">Nombre del agente:</label>
+                            <input type="text" id="nombre_chapa_agente" name="nombre_chapa_agente" class="form-control" required>
+                            <br>
 
-<label for="estado_pago">Estado de Pago:</label>
-<input type="text" id="estado_pago" name="estado_pago" class="form-control" value="No Pagado" readonly>
-<br>
+                            <label for="estado_pago">Estado de Pago:</label>
+                            <input type="text" id="estado_pago" name="estado_pago" class="form-control" value="No Pagado" readonly>
+                            <br>
 
-
-<button type="submit" name="submit" class="btn btn-info btn-fill pull-right">Subir Infraccion</button>
-<br>
-<br>
-</form>
-                            </div>
-                        </div>
+                            <button type="submit" name="submit" class="btn btn-info btn-fill pull-right">Subir Infraccion</button>
+                            <br>
+                            <br>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <?php include"footer.php"; ?>
+    </div>
+</div>
+<?php include "footer.php"; ?>
+
+<script>
+function validateForm() {
+    var input = document.getElementById('fotos_remociones');
+    if (input.files.length > 10) {
+        alert('No se pueden subir más de 10 fotos.');
+        return false;
+    }
+    return true;
+}
+
+<?php if (isset($_GET['status'])): ?>
+    <?php if ($_GET['status'] == 'success'): ?>
+        alert('Formulario enviado correctamente.');
+    <?php elseif ($_GET['status'] == 'error'): ?>
+        alert('Hubo un error al enviar el formulario.');
+    <?php elseif (isset($_GET['message']) && $_GET['message'] == 'too_many_files'): ?>
+        alert('No se pueden subir más de 10 fotos.');
+    <?php endif; ?>
+<?php endif; ?>
+</script>
