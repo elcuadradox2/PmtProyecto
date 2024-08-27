@@ -1,9 +1,8 @@
 <?php 
 include('connect.php');
 
-session_start();
-if(!isset($_SESSION['SESS_FIRST_NAME'])){
-    header("location: login.php");
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
 }
 ?>
     <!doctype html>

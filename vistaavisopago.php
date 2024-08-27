@@ -1,4 +1,7 @@
-<?php include "sidebar.php"; ?>
+<?php 
+include 'session_timeout.php';
+include "sidebar.php"; 
+?>
 <div class="content">
     <div class="container-fluid">
         <div class="row">

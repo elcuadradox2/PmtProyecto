@@ -1,4 +1,5 @@
 <?php
+include 'session_timeout.php';
 include('configbd.php');
 session_start();
 

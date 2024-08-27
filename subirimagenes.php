@@ -1,4 +1,7 @@
-<?php include "sidebar.php"; ?>
+<?php 
+include 'session_timeout.php';
+include "sidebar.php"; ?>
+
 
 <?php
 include('configbd.php');

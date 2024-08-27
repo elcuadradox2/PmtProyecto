@@ -19,6 +19,9 @@ if (!$siteSettings) {
 
 $errorMessages = isset($_SESSION['ERRMSG_ARR']) ? $_SESSION['ERRMSG_ARR'] : [];
 unset($_SESSION['ERRMSG_ARR']);
+
+// Verificar si hay un mensaje en la URL
+$message = isset($_GET['message']) ? htmlspecialchars($_GET['message']) : '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,6 +58,11 @@ unset($_SESSION['ERRMSG_ARR']);
                         <?php foreach ($errorMessages as $message): ?>
                             <p><?php echo htmlspecialchars($message); ?></p>
                         <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (!empty($message)): ?>
+                    <div class="error-message">
+                        <p><?php echo $message; ?></p>
                     </div>
                 <?php endif; ?>
                 <div class="form-left-w3l">
