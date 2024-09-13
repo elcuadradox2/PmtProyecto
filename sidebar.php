@@ -88,6 +88,18 @@ if($position=='admin') {
                     </a>
                 </li>
                 <li class="">
+                    <a href="multasadministrativas.php">
+                        <i class="pe-7s-graph"></i>
+                        <p>Multas Administrativas</p>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="vistaadministrativas.php">
+                        <i class="pe-7s-graph"></i>
+                        <p>Listado Multas Administrativas</p>
+                    </a>
+                </li>
+                <li class="">
                     <a href="mostrarfotosboleta.php">
                         <i class="pe-7s-graph"></i>
                         <p>Fotos Agentes Boletas</p>
