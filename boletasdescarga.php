@@ -21,7 +21,7 @@
                     "agresiones",
                     "alcoholemia",
                     "avisopagoycitacion",
-                    "bitacoradeactividades",
+                    "bitacoraactividades",
                     "bitacoraoperativos",
                     "colisiones",
                     "consignaciones",
