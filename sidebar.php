@@ -87,6 +87,12 @@ if($position=='admin') {
                         <p>Menu</p>
                     </a>
                 </li>
+                <li>
+                        <a href="descargar_todas_fotos.php">
+                        <i class="pe-7s-download"></i>
+                        <p>Descargar todas las fotos</p>
+                    </a>
+                </li>
                 <li class="">
                     <a href="mostrarfotosboleta.php">
                         <i class="pe-7s-graph"></i>
