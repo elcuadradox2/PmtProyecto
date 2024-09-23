@@ -42,7 +42,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <body>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="orange" data-image="assets/img/sidebarpmt.png">
+    <div class="sidebar" data-color="blue" data-image="assets/img/sidebarpmt.webp">
 
     <!--
 

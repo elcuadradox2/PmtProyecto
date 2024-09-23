@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(../img/logopmt.webp);
+    background: url(../img/logomuni.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -50,7 +50,7 @@ body::before {
 .login-form h2 {
     margin-bottom: 1.5rem;
     font-family: 'Roboto', sans-serif; /* Fuente moderna */
-    color: #ff6600; /* Color naranja */
+    color: #0095ff; /* Color naranja */
 }
 
 .input-group {
@@ -67,7 +67,7 @@ body::before {
 }
 
 .input-group input:focus {
-    border-color: #ff6600; /* Color naranja */
+    border-color: #0095ff; /* Color naranja */
     outline: none;
 }
 
@@ -76,7 +76,7 @@ body::before {
     padding: 0.75rem;
     border: none;
     border-radius: 4px;
-    background: #ff6600; /* Color naranja */
+    background: #0095ff; /* Color naranja */
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
